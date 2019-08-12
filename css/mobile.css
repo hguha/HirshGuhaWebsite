@@ -1,0 +1,132 @@
+@media screen and (max-width: 800px) {
+    .mobile-menu-container {
+        display: inline !important;
+        z-index: 100;
+    }
+    .programming, .table-tennis, .bridge {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(0,0,0, 0.9), rgba(50,50,50, 0.9));
+        overflow-y: hidden;
+        transition: 0.5s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 15%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        display: block !important;
+    }
+
+    .openbtn {
+        position: absolute;
+        top: -9;
+        left: 47%;
+        display: inline !important;
+        text-align: center;
+        font-size: 50px;
+        cursor: pointer;
+        color: white;
+        transition: 0.4s;
+    }
+
+    .openbtn:hover {
+        color: #c3c3c3;
+        transform: rotate(90deg);
+    }
+
+    .closebtn:hover {
+        color: #c3c3c3;
+        transform: rotate(90deg) !important;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        text-transform: uppercase;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+        transform: translateY(-7px);
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 70px;
+        z-index: 5000;
+    }
+
+    #navbar, .navbar-logo, .sticky, .header, .top-menu-item {
+        display: none;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    #hero {
+        margin-top: -7%;
+        height: 50vh;
+        padding-top: 20vh;
+    }
+
+    .prev, .next {
+        position: relative;
+    }
+
+    #contact {
+        padding: 1% 5% !important;
+    }
+
+    #projects .card, #projects button {
+        font-size: 15px;
+    }
+
+    #projects .card h3 {
+        font-size: 25px;
+    }
+
+    #quote h3 {
+        font-size: 25px !important;
+    }
+
+    #quote h5 {
+        font-size: 15px !important;
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+
+    #interests .toggle {
+        padding: 0px;
+        margin: 0;
+        font-size: 0.8em;
+    }
+    #interests .row {
+        padding: 3% 0;
+
+    }
+
+    #skills .noncode {
+        display: none;
+    }
+}

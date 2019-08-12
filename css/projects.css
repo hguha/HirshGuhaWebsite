@@ -1,0 +1,115 @@
+#projects {
+    background:
+        linear-gradient(to right, rgba(0,25,25, 0.8), rgba(40,100,80, 0.8)),
+        url("../images/hero.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+}
+
+#projects h2 {
+    padding-top: 20px;
+    margin-bottom: -10px;
+}
+
+.project-slider {
+  margin:0 auto;
+  padding: 4% 0;
+  text-align:center;
+  z-index: 3;
+  width: 100%;
+}
+
+.project-slider p {
+    z-index: 10;height: 85px;
+}
+
+.project-slider .card {
+  margin: 5px 10px;
+  height: auto;
+  transition: 0.5s;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.slick-dots li button:before {
+    background: transparent;
+    color: white !important;
+    font-size: 15px;
+    transition:0.4s;
+
+}
+
+.slick-dots li button:after {
+height: 0;
+}
+
+
+#prev, #next {
+  cursor: pointer;
+  color: #fff;
+  font-size: 40px;
+  user-select: none;
+  transition: 0.3s;
+  z-index: 100;
+  display:inline-block !important;
+  opacity: 0.5;
+}
+
+.arrows {
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+#prev:hover, #next:hover {
+  opacity: 1;
+  color: var(--theme-color) !important;
+  transform: scale(1.2) translateX(8px);
+}
+
+#prev:hover {
+    transform: scale(1.2) translateX(-8px);
+}
+
+#projects .col {
+    margin: auto;
+}
+
+#projects .row {
+    margin: auto;
+}
+
+.slick-slide img {
+    display: inline;
+    object-fit: cover;
+    height: 300px;
+    max-height: 300px;
+    box-shadow: 1px 3px 4px rgba(0,0,0,0.5), 0 3px 6px rgba(0,0,0,0.5);
+}
+.feature {
+    display:table;
+    padding: 10px 0;
+}
+.feature, .text{
+    overflow: hidden;
+    text-align: left;
+}
+.text{
+    padding-left: 10px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.fa-stack{
+    float: left;
+    display: table-cell;
+    color: var(--theme-color);
+    vertical-align: middle;
+}
+
+.languages {
+    font-weight: bold;
+    color: var(--theme-color);
+    word-spacing: 10px;
+    text-transform: uppercase;
+}
