@@ -2,23 +2,13 @@ $(document).ready(function(){
   $('.project-slider').slick({
         centerMode: true,
         slidesToShow: 1,
-        dots: true,
         arrows: false,
         responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            centerMode: true,
-            slidesToShow: 1,
-            dots: true,
-          }
-        },
         {
           breakpoint: 900,
           settings: {
             centerMode: false,
             slidesToShow: 1,
-            dots: true,
           }
         },
         ]
@@ -52,7 +42,6 @@ function prev() {
 }
 
 function setToMaxHeight() {
-    console.log("called");
     var highestBox = 0;
        slides.each(function(){
            if($(this).height() > highestBox){

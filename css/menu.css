@@ -8,33 +8,24 @@
 }
 
 .navbar-logo:hover {
-    transform: scale(1.2) rotate3d(0,1,0, 360deg);
+    transform: scale(1.2) rotate3d(0,1,0, 180deg);
 }
 
-.mobile-menu-container {
-    display: none;
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    top: 0;
-    position: fixed;
-    height: 60px;
-    z-index: 100;
-}
-
-.header {
+#navbar {
   padding: 20px;
   text-align:right;
   color: #fff;
   position: absolute;
-  z-index: 1000;
-  transition: 0.2s;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .topbar-menu-item {
-  padding: 0 1% 0% 1%;
+  padding: 0 1%;
   cursor: pointer;
   color: white;
-  font-size: 20px;
   text-transform: uppercase;
   font-weight:100;
   display: inline-block;
@@ -47,7 +38,7 @@
     height: 2px;
     width: 0;
     display: block;
-    transition: 0.2s;
+    transition: 0.3s;
     margin: 0 auto;
 }
 
@@ -62,12 +53,6 @@
   transform: translateY(4px);
 }
 
-.openbtn, .closebtn, .overlay-content {
+.openbtn, .closebtn, .overlay-content, .mobile-menu-container {
   display:none;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }

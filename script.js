@@ -4,20 +4,28 @@ function gtag() {dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-111498872-4');
 
+tippy('button', {
+  animation: 'scale',
+  duration: 400,
+  arrow: true,
+  size: "large"
+});
+
+
 //THEME
 let root = document.documentElement;
-let themeColor = "#00ccff";
+let themeColor = "#114499";
 function setDarkTheme() {
 	console.log(root);
 	root.style.setProperty("--text-color", "#fff");
 	root.style.setProperty("--background-color", "#3c3c3c");
-	root.style.setProperty("--theme-color", themeColor = "#1155aa");
+	root.style.setProperty("--theme-color", themeColor = "#00ccff");
 }
 
 function setLightTheme() {
 	root.style.setProperty("--text-color", "#3c3c3c");
 	root.style.setProperty("--background-color", "#fff");
-	root.style.setProperty("--theme-color", themeColor = "#00ccff");
+	root.style.setProperty("--theme-color", themeColor = "#114499");
 }
 
 //SKILLS
@@ -39,13 +47,6 @@ function inView(id) {
 
 let bars = document.getElementsByClassName("progress-bar");
 var barsAnimated = false;
-
-$(window).scroll(function(){
-	if(inView('skills') && window.innerWidth > 768){
-		if(!barsAnimated) animateBars();
-		barsAnimated = true;
-	}
-});
 
  if(window.innerWidth < 768) {
 	 animateBars();
@@ -131,6 +132,10 @@ function typeWriter() {
 window.onscroll = function() {
 
   changeOpacity();
+  if(inView('skills') && window.innerWidth > 768){
+	  if(!barsAnimated) animateBars();
+	  barsAnimated = true;
+  }
 
 };
 
@@ -156,4 +161,15 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mobileNav").style.height = "0%";
+}
+
+function submitForm() {
+    let name = document.getElementById("name");
+    let message = document.getElementById("message");
+    let email = document.getElementById("email");
+    let formValid = email.checkValidity() && email.checkValidity() && message.checkValidity();
+    if(formValid) {
+        document.getElementById("contact-form").submit();
+    }
+    else {}
 }

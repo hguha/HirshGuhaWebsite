@@ -4,12 +4,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111498872-4"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/projects.css">
@@ -47,7 +46,7 @@
         </div>
 
         <!-- Top Menu -->
-        <div class="sticky header" id="navbar">
+        <div id="navbar">
             <img class="navbar-logo" href="#" src="images/hg-logo-white.png" alt="Logo"></img>
             <a class="topbar-menu-item" href="#hero">Home</a>
             <a class="topbar-menu-item" href="#projects">Projects</a>
@@ -71,8 +70,8 @@
 
         <div id="toggle">
             <h3>Choose your experience:</h3>
-            <button onclick="setDarkTheme()">Dark Theme</button>
-            <button onclick="setLightTheme()">Light Theme</button>
+            <button class="dark" onclick="setDarkTheme()" data-tippy-content="Dark">Dark</button>
+            <button class="light" onclick="setLightTheme()" data-tippy-content="Light">Light</button>
         </div>
 
         <!-- PROJECTS -->
@@ -88,33 +87,33 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-toggle-on fa-stack-1x"></i>
                                 </span>
                                 <span class="text">togglable Interests section written entirely by me using jQuery<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-sliders-h fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Slick.js library used to create project slider with equal height DIVs<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-mobile fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Bootstrap framework and use of keyframes creates a perfectly responsive site, viewable at any viewport<span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <img src="images/skynet.jpg" width="90%">
+                            <img src="images/website.png" width="90%">
                         </div>
                     </div>
                     <br>
                     <hr>
-                    <button onclick="window.open('https://github.com/hguha/Skynet','_blank');"><i class="fab fa-github"></i> Github</button>
+                    <button onclick="window.open('https://github.com/hguha/HirshGuhaWebsite','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
                 </div>
                 <div class="card">
                     <h3>Skynet Security</h3>
@@ -125,21 +124,21 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-walking fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Tensor Flow image classification and object detection<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-ruler fa-stack-1x"></i>
                                 </span>
                                 <span class="text">TFMini - Micro LiDAR Module achieves real-time and contactless distance measurement<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-adjust fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Threshold Frame created from the high contrast and difference frames<span>
@@ -151,8 +150,8 @@
                     </div>
                     <br>
                     <hr>
-                    <button onclick="window.open('https://github.com/hguha/Skynet','_blank');"><i class="fab fa-github"></i> Github</button>
-                    <button onclick="window.open('https://www.youtube.com/watch?v=aIcJxIsbZ6k','_blank');"><i class="fas fa-video"></i> Video</button>
+                    <button onclick="window.open('https://github.com/hguha/Skynet','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
+                    <button onclick="window.open('https://www.youtube.com/watch?v=aIcJxIsbZ6k','_blank');" data-tippy-content="Watch Video"><i class="fas fa-video"></i></button>
                 </div>
                 <div class="card">
                     <h3>and...Time!</h3>
@@ -164,34 +163,34 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-walking fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-keyboard fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Multiple key-press detection prevents accidentally stopping/starting the timer if hitting a key too quickly<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-ruler fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stopwatch fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Measures key averages: Best of 5, Best of 12, and overall Best<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-adjust fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-undo fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Reset button makes it easy to use time and time again<span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <img src="images/skynet.jpg" width="90%">
+                            <img src="images/timer.png" width="90%">
                         </div>
                     </div>
                     <br>
                     <hr>
-                    <button onclick="window.open('https://github.com/hguha/Skynet','_blank');"><i class="fab fa-github"></i> Github</button>
-                    <button onclick="window.location.href = 'timer/timer.html';"><i class="fas fa-binoculars"></i> View</button>
+                    <button onclick="window.open('https://github.com/hguha/TimeIt','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
+                    <button onclick="window.location.href = 'timer/timer.html';" data-tippy-content="Use It"><i class="fas fa-binoculars"></i></button>
                 </div>
                 <div class="card">
                     <h3>Minesweeper</h3>
@@ -203,72 +202,71 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-walking fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-th-large fa-stack-1x"></i>
                                 </span>
                                 <span class="text">A custom recursive mine-placing algorithm allows for boards and ammounts of mines of any size<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-ruler fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-thumbs-up fa-stack-1x"></i>
                                 </span>
                                 <span class="text">Validation on mines, flags, boardsize, wins, and losses assure a completely hitch-free experience<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-adjust fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-trophy fa-stack-1x"></i>
                                 </span>
                                 <span class="text">A timer keeps score, and a leaderboard allows you to compete!<span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <img src="images/skynet.jpg" width="90%">
+                            <img src="images/minesweeper.png" width="90%">
                         </div>
                     </div>
                     <br>
                     <hr>
-                    <button onclick="window.open('https://github.com/hguha/Skynet','_blank');"><i class="fab fa-github"></i> Github</button>
-                    <button onclick="window.location.href = 'minesweeper/minesweeper.html';"><i class="fas fa-binoculars"></i> View</button>
+                    <button onclick="window.open('https://github.com/hguha/Minesweeper','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
+                    <button onclick="window.location.href = 'minesweeper/minesweeper.html';" data-tippy-content="Use It"><i class="fas fa-binoculars"></i></button>
                 </div>
                 <div class="card">
                     <h3>Dogstagram</h3>
-                    <div class="languages">PYTHON • FLASK • JQUERY • AJAX • FIREBASE • JAVASCRIPT • TENSORFLOW</div>
-                    <div class="description">A functioning social media and image sharing platform with a twist: image classification prevents upload of any image other than dogs</div>
+                    <div class="languages">PYTHON • FLASK • JQUERY • FIREBASE • JAVASCRIPT • TENSORFLOW</div>
+                    <div class="description">A social media/image sharing platform with a twist: image classification prevents upload of any image other than dogs</div>
                     <hr>
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-walking fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-paw fa-stack-1x"></i>
                                 </span>
-                                <span class="text">Tensor Flow image classification and object detection<span>
+                                <span class="text">Tensor Flow Image Classification assures "dog" tag is set before uploading the image<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-ruler fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-tachometer-alt fa-stack-1x"></i>
                                 </span>
-                                <span class="text">TFMini - Micro LiDAR Module achieves real-time and contactless distance measurement<span>
+                                <span class="text">Dashboard and friend system allows users to see what other users they follow are posting<span>
                             </div>
                             <div class="feature">
                                 <span class="fa-stack fa-2x">
-                                    <i class="fal fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-adjust fa-stack-1x"></i>
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-image fa-stack-1x"></i>
                                 </span>
-                                <span class="text">Threshold Frame created from the high contrast and difference frames<span>
+                                <span class="text">Add, Delete, Modify, and caption photos<span>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <img src="images/skynet.jpg" width="90%">
+                            <img src="images/dogstagram.png" width="90%">
                         </div>
                     </div>
                     <br>
                     <hr>
-                    <button onclick="window.open('https://github.com/hguha/Skynet','_blank');"><i class="fab fa-github"></i> Github</button>
-                    <button onclick="window.open('https://www.youtube.com/watch?v=aIcJxIsbZ6k','_blank');"><i class="fas fa-video"></i> Video</button>
+                    <button onclick="window.open('https://github.com/hguha/Dogstagram','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
                 </div>
             </div>
             <div class="arrows">
@@ -286,7 +284,7 @@
             <div class="row">
                 <div class="col-md">
                     <div class="card philosophy">
-                        <h2>Philosophy</h2>
+                        <h2 style="color:#3c3c3c">Philosophy</h2>
                         <p style="padding: 3%">
                             My philosphy, principles, my meaning of life, goals - whatever you want to call it - can easily be summed up in a word: create.
                             More than anything, creating is something that brings me true joy. It's knowing that my actions have an impact beyond myself, and
@@ -305,7 +303,7 @@
                 </div>
             </div>
             <div class="row resume">
-                <button onclick="window.open('HirshGuha_Resume.pdf')"><i class="fas fa-file-download"></i> Download Resumé</button>
+                <button onclick="window.open('HirshGuha_Resume.pdf')" data-tippy-content="Download Resume"><i class="fas fa-file-download"></i></button>
             </div>
         </div>
 
@@ -316,14 +314,14 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="row">
-                        <div class="toggle" id="1"><i class="far fa-4x fa-table-tennis"></i><br>Table Tennis</div>
-                        <div class="toggle" id="2"><i class="far fa-4x fa-hands-helping"></i><br>Community</div>
-                        <div class="toggle" id="3"><i class="far fa-4x fa-club"></i><br>Bridge</div>
+                        <div class="toggle" id="1"><i class="fas fa-4x fa-table-tennis"></i><br>Table Tennis</div>
+                        <div class="toggle" id="2"><i class="fas fa-4x fa-hands-helping"></i><br>Community</div>
+                        <div class="toggle" id="3"><i class="fas fa-4x fa-heart"></i><br>Bridge</div>
                     </div>
                     <div class="row">
-                        <div class="toggle" id="4"><i class="far fa-4x fa-utensils"></i><br>Cooking</div>
-                        <div class="toggle" id="5"><i class="far fa-4x fa-theater-masks"></i><br>Theatre</div>
-                        <div class="toggle" id="6"><i class="far fa-4x fa-comments"></i><br>Speech</div>
+                        <div class="toggle" id="4"><i class="fas fa-4x fa-utensils"></i><br>Cooking</div>
+                        <div class="toggle" id="5"><i class="fas fa-4x fa-theater-masks"></i><br>Theatre</div>
+                        <div class="toggle" id="6"><i class="fas fa-4x fa-comments"></i><br>Speech</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-md-6 col-sm-12 vcenter">
@@ -408,53 +406,53 @@
                 <div class="col">
                     PHP
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="25">Hello</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="80">80%</div>
                     </div>
                     Javascript
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="30">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90">90%</div>
                     </div>
                     C/C++
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70">70%</div>
                     </div>
                     Python
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60">60%</div>
                     </div>
                     SQL
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70">70%</div>
                     </div>
                     HTML/CSS
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="25">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90">90%</div>
                     </div>
                 </div>
                 <div class="col noncode">
                     Web Design
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="25">Extremely Proficient</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="80">80%</div>
                     </div>
                     App Design
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="30">A little Profieint</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60">60%</div>
                     </div>
                     Content Writing
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75">75%</div>
                     </div>
                     Data Analytics
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75">75%</div>
                     </div>
                     Graphics/Logos
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="65">65%</div>
                     </div>
                     Web Development
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="25">25%</div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70">80%</div>
                     </div>
                 </div>
             </div>
@@ -463,28 +461,29 @@
         <!-- CONTACT -->
         <div id="contact">
             <h2 style="color:white">Contact</h2>
-            <form action="https://formspree.io/hirsh@allofe.com" method="POST">
+            <form id="contact-form" action="https://formspree.io/hirsh@allofe.com" method="POST">
 
                 <div class="row">
                     <div class="col">
                         Name
-                        <input type="text" name="name" required>
+                        <input id="name" type="text" name="name" required>
                         Email
-                        <input type="email" name="_replyto" required><br>
+                        <input id="email" type="email" name="_replyto" required><br>
                         Subject
                         <input type="text" name="_subject"><br>
                     </div>
                     <div class="col">
                         Message
-                        <textarea name="message" rows="4" required></textarea>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                         <input type="hidden" name="_next" value="https://hirshguha.com/contact-thanks.html" />
                     </div>
                 </div>
 
-                <input type="submit" value="SUBMIT">
+                <button onclick="submitForm()" data-tippy-content="Submit"><i class="fas fa-paper-plane"></i></button>
 
             </form>
         </div>
+
 
         <!-- FOOTER -->
         <div id="footer">
@@ -499,7 +498,9 @@
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@4"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="slider.js" differ></script>
         <script src="script.js"></script>
 
