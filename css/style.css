@@ -90,7 +90,6 @@ h3 {
     border: 1px solid black;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 5px 3px -3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    transition: 0.4s;
     padding: 15px;
 }
 
@@ -114,6 +113,9 @@ h3 {
 #about .card {
     margin: 7% 2% 2%;
     min-height: 25vw;
+    opacity: 0;
+    transition: 1s;
+    transform: translateY(80px);
 }
 
 #about .card.philosophy {
@@ -144,28 +146,58 @@ h3 {
     padding-top: 20px;
     display:block;
     text-align: center;
+    z-index: 10;
+    position:relative;
 }
 
 #highlights {
     background: var(--background-color);
-    margin: auto;
+    padding: 0 3%;
 }
 
-#highlights .row {
-    margin: 0;
-    width: 100%;
-    padding: 3% 2%
+#highlights .cards {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform:translateX(100px);
+    transition: 1.5s;
 }
 
 #highlights .card {
-    margin: 2% 0;
-    min-height: 350px;
+    min-height: 250px;
+    width: 31.3333%;
+    margin: 0 1% 20px 1%;
 }
 
 #highlights h3 {
-    padding-top: 3%;
+    font-size: 30px;
     text-align: center;
     text-transform: uppercase;
+    margin: auto;
+}
+
+#highlights .filter {
+    text-align: center;
+    word-spacing: 80px;
+}
+
+#highlights .filter a{
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: 900 !important;
+    transition: 0.4s;
+    padding: 0.5%;
+}
+
+#highlights .filter a:hover {
+    text-decoration: none;
+    color: var(--theme-color);
+}
+
+#highlights .filter a.active {
+    color: var(--background-color);
+    background: var(--theme-color);;
+    transition: 0.4s;
 }
 
 #highlights .card:after {
@@ -173,7 +205,7 @@ h3 {
     font-family:'Font Awesome 5 Free';
     font-size: 150px;
     position:absolute;
-    top:70px;
+    top:0px;
     left:calc(50% - 90px);
     z-index: 0;
     opacity: 0.2;
@@ -184,12 +216,24 @@ h3 {
 }
 
 #highlights .bridge:after {
-    content:'\f004';
+    content:'\2663';
 }
-
 
 #highlights .speech:after {
     content:'\f086';
+}
+
+.is-animated {
+  animation: .6s zoom-in;
+}
+
+@keyframes zoom-in {
+  0% {
+   transform: scale(.1);
+  }
+  100% {
+    transform: none;
+  }
 }
 
 #stats {
@@ -203,6 +247,10 @@ h3 {
     color: var(--background-color);
     text-align: center;
     font-size: 3.6em;
+}
+
+#stats .num {
+    font-size: 1em;
 }
 
 #stats div{
@@ -225,6 +273,7 @@ h3 {
 }
 
 #skills .progress-bar {
+    transition: 1s;
     width: 0;
     background-color: var(--theme-color);
 }

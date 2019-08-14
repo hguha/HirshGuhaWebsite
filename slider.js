@@ -3,12 +3,12 @@ $(document).ready(function(){
         centerMode: true,
         slidesToShow: 1,
         arrows: false,
+        dots: true,
         responsive: [
         {
           breakpoint: 900,
           settings: {
             centerMode: false,
-            slidesToShow: 1,
           }
         },
         ]

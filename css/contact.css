@@ -19,10 +19,18 @@
     margin-top: 5px;
     padding:10px;
     width: 100%;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(-50px);
 }
 
 #contact textarea {
-     height: 255px;  /*Calculated with math WOOOO */
+     height: 200px;
+     transform: translateX(100px);
+}
+
+::placeholder {
+    color: rgba(255,255,255,0.6);
 }
 
 #footer {

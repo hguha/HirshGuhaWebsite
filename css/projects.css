@@ -1,6 +1,6 @@
 #projects {
     background:
-        linear-gradient(to right, rgba(0,25,25, 0.8), rgba(40,100,80, 0.8)),
+        linear-gradient(to left, rgba(052,232,158, 0.8), rgba(15,52,67, 0.8)),
         url("../images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@
 
 .project-slider {
   margin:0 auto;
-  padding: 4% 0;
+  padding: 4% 0 0;
   text-align:center;
   width: 100%;
 }
@@ -25,13 +25,34 @@
   transition: 0.5s;
   opacity: 0.4;
 }
+.slick-dots li {
+    display: inline;
+}
 
-.slick-dots li button:before {
-    background: transparent;
-    color: white !important;
-    font-size: 15px;
+.slick-dots {
+    padding:1% 0 0;
+}
+
+.slick-dots li button {
+    background: white;
+    border: none;
+    margin: 0 10px;
+    font-size:0;
     transition:0.4s;
+    width: 15px;
+    height: 15px;
+    opacity: 0.4;
+}
 
+.slick-dots li button:hover {
+    background: var(--theme-color);
+    opacity: 1;
+    transform:scale(1.2);
+}
+
+.slick-dots .slick-active button{
+    opacity: 1;
+    background: var(--theme-color);
 }
 
 #prev, #next {

@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/service.css">
 
     <link rel='icon' href='images/hg-logo-black.png' type='image/x-icon' />
 
@@ -31,6 +30,19 @@
 </HEAD>
 
 <body>
+
+    <!--
+    Written, Designed, and Coded by
+    _    _ _          _        _____       _
+   | |  | (_)        | |      / ____|     | |
+   | |__| |_ _ __ ___| |__   | |  __ _   _| |__   __ _
+   |  __  | | '__/ __| '_ \  | | |_ | | | | '_ \ / _` |
+   | |  | | | |  \__ \ | | | | |__| | |_| | | | | (_| |
+   |_|  |_|_|_|  |___/_| |_|  \_____|\__,_|_| |_|\__,_|
+
+
+    -->
+
     <div class="content">
         <!-- Mobile Menu -->
         <div id="mobileNav" class="overlay">
@@ -71,7 +83,9 @@
         <div id="toggle">
             <h3>Choose your experience:</h3>
             <button class="dark" onclick="setDarkTheme()" data-tippy-content="Dark">Dark</button>
-            <button class="light" onclick="setLightTheme()" data-tippy-content="Light">Light</button>
+            <button class="light" onclick="setLightTheme()" data-tippy-content="Light">Light</button><br>
+            This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me using jQuery
+
         </div>
 
         <!-- PROJECTS -->
@@ -339,40 +353,42 @@
 
         <!-- HIGHLIGHTS -->
         <div id="highlights">
-            <div class="row">
-                <div class="col-md ">
-                    <div class="card theater">
-                        <h3>Theatre</h3>
-                        <ul>
-                            <li><b>Show:</b> Aladdin - <b>Role:</b> Aladdin</li>
-                            <li><b>Show:</b> Cinderella - <b>Role:</b> Prince Charming</li>
-                            <li><b>Show:</b> Almost Maine - <b>Role:</b> Daniel</li>
-                            <li><b>Show:</b> Twelvth Night - <b>Role:</b> Sebastian</li>
-                            <li><b>Show:</b> Almost Maine - <b>Role:</b> Daniel</li>
-                        </ul>
-                    </div>
+            <h2>Highlights</h2>
+            <hr>
+            <div class="filter">
+                <a class="all active" data-filter="all" href="#" role="button">All</a>
+                <a data-filter="theater" href="javaScript:void(0)" role="button">Theater</a>
+                <a data-filter="bridge" href="javaScript:void(0)" role="button">Bridge</a>
+                <a data-filter="speech" href="#" role="button">Speech</a>
+            </div>
+            <hr>
+            <div class="cards">
+                <div class="card theater" data-type="theater">
+                    <h3>Aladdin in Aladdin</h3>
                 </div>
-                <div class="col-md">
-                    <div class="card speech">
-                        <h3>Speech</h3>
-                        <ul>
-                            <li>State Champion in Poetry</li>
-                            <li>State Champion in Informative Speaking</li>
-                            <li>National Qualifier in Informative Speech</li>
-                            <li>National Qualifier in Program Oral Interpretation</li>
-                            <li>National Semifinalist in Informative Speaking</li>
-                        </ul>
-                    </div>
+                <div class="card bridge" data-type="bridge">
+                    <h3>Council Bluffs Regional Gold Rush 1st Place</h3>
                 </div>
-                <div class="col-md">
-                    <div class="card bridge">
-                        <h3>Bridge</h3>
-                        <ul>
-                            <li>Blue Springs District ACBL Tournament - 1st Place</li>
-                            <li>Tulsa Regional ACBL Tournament - 3rd Place</li>
-                            <li>Tulsa Regional Gold Rush - 6th Place</li>
-                        </ul>
-                    </div>
+                <div class="card speech" data-type="speech">
+                    <h3>State Champion in Poetry</h3>
+                </div>
+                <div class="card bridge" data-type="bridge">
+                    <h3>Tulsa Regional Tournament 3rd Place</h3>
+                </div>
+                <div class="card theater" data-type="theater">
+                    <h3>Prince Charming in Cinderella</h3>
+                </div>
+                <div class="card speech" data-type="speech">
+                    <h3>National Semifinalist in Informative Speaking</h3>
+                </div>
+                <div class="card theater" data-type="theater">
+                    <h3>Sebastian in Twelvth Night</h3>
+                </div>
+                <div class="card speech" data-type="speech">
+                    <h3>State Champion in Informative Speaking</h3>
+                </div>
+                <div class="card bridge" data-type="bridge">
+                    <h3>Blue Springs District Tournament 1st Place</h3>
                 </div>
             </div>
         </div>
@@ -381,19 +397,19 @@
         <div id="stats">
             <div class="row">
                 <div class="col">
-                    100+<br>
+                    <span data-num="100" class="num">0</span>+<br>
                     <span>Months of Experience</span>
                 </div>
                 <div class="col">
-                    30000+<br>
+                    <span data-num="30000" class="num">0</span>+<br>
                     <span>Lines of Code Written</span>
                 </div>
                 <div class="col">
-                    50000+<br>
+                    <span data-num="2000" class="num">0</span>+<br>
                     <span>Views on my Pages</span>
                 </div>
                 <div class="col">
-                    2000+<br>
+                    <span data-num="3000" class="num">0</span>+<br>
                     <span>Coffees Consumed</span>
                 </div>
             </div>
@@ -464,17 +480,13 @@
             <form id="contact-form" action="https://formspree.io/hirsh@allofe.com" method="POST">
 
                 <div class="row">
-                    <div class="col">
-                        Name
-                        <input id="name" type="text" name="name" required>
-                        Email
-                        <input id="email" type="email" name="_replyto" required><br>
-                        Subject
-                        <input type="text" name="_subject"><br>
+                    <div class="col-md-6 col-sm-12">
+                        <input id="name" type="text" name="name" placeholder="Name" required>
+                        <input id="email" type="email" name="_replyto" placeholder="Email" required><br>
+                        <input type="text" name="_subject" placeholder="Subject"><br>
                     </div>
-                    <div class="col">
-                        Message
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                    <div class="col-md-6 col-sm-12">
+                        <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
                         <input type="hidden" name="_next" value="https://hirshguha.com/contact-thanks.html" />
                     </div>
                 </div>

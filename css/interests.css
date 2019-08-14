@@ -23,6 +23,7 @@
     padding: 0;
     transition: 0.4s;
     user-select: none;
+    opacity: 0;
 }
 
 #interests .fas {
@@ -37,6 +38,7 @@
 
 #interests .text {
     color: white;
+    opacity: 0;
 }
 
 #interests .vcenter{
