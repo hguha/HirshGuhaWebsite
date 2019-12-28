@@ -1,13 +1,15 @@
 <HTML>
 
 <HEAD>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111498872-4"></script>
-
+    <!-- EXTERNAL -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111498872-4"></script>
 
 
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +17,6 @@
     <link rel="stylesheet" href="css/interests.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/menu.css">
 
     <link rel='icon' href='images/hg-logo-black.png' type='image/x-icon' />
 
@@ -282,6 +283,80 @@
                     <hr>
                     <button onclick="window.open('https://github.com/hguha/Dogstagram','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
                 </div>
+                <div class="card">
+                    <h3>Code Library</h3>
+                    <div class="languages">JAVASCRIPT</div>
+                    <div class="description">A code library of some of the best methods I've adapted, written, or found in my time programming</div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="feature">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-cogs fa-stack-1x"></i>
+                                </span>
+                                <span class="text">Methods and functions primarily for web development that enable more powerful usage of javascript<span>
+                            </div>
+                            <div class="feature">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-feather-alt fa-stack-1x"></i>
+                                </span>
+                                <span class="text">Extremely lightweight, and easy to customize<span>
+                            </div>
+                            <div class="feature">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-bootstrap fa-stack-1x"></i>
+                                </span>
+                                <span class="text">Compatible and adaptable with various other libraries and frameworks, such as Bootstrap and AngularJS<span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <img src="images/code-library.png" width="90%">
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <button class="disabled" data-tippy-content="Under Construction"><i class="fab fa-github"></i></button>
+                </div>
+                <div class="card">
+                    <h3>A Little Bit of Everything</h3>
+                    <div class="languages">INDIAN • ITALIAN • CHINESE • THAI • AMERICAN</div>
+                    <div class="description">A cookbook of some of my favorite and most common recipes that I've devised myself. It's an ongoing project that I want to fully flesh out.</div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="feature">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-clock fa-stack-1x"></i>
+                                </span>
+                                <span class="text">Every recipe is something that came from making dozens of attempts, and slowly perfecting<span>
+                            </div>
+                            <div class="feature">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-globe-americas fa-stack-1x"></i>
+                                </span>
+                                <span class="text">I continue to expand my culinary well-roundedness, looking to explore every culture from African to South American<span>
+                            </div>
+                            <div class="feature">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-heart fa-stack-1x"></i>
+                                </span>
+                                <span class="text">As a living document, it will continuously be updated as I create new recipes I love<span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <img src="images/cookbook.png" width="90%">
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <button onclick="window.open('Cookbook.pdf');" data-tippy-content="Download Cookbook"><i class="fas fa-file-download"></i></button>
+                </div>
             </div>
             <div class="arrows">
                 <a id="prev">❮</a>
@@ -291,33 +366,27 @@
 
         <!-- ABOUT -->
         <div id="about">
-            <!-- <div class="row quote">
+            <div class="quote">
                 <h3>"Life is too important to be taken seriously"</h3>
                 Oscar Wilde
-            </div> -->
-            <div class="row">
-                <div class="col-md">
-                    <div class="card philosophy">
+            </div>
+            <div class="row equal">
+                <div class="col-md d-flex">
+                    <div class="card flex-fill philosophy">
                         <h2 style="color:#3c3c3c">Philosophy</h2>
                         <p style="padding: 3%">
-                            My philosphy, principles, my meaning of life, goals - whatever you want to call it - can easily be summed up in a word: create.
-                            More than anything, creating is something that brings me true joy. It's knowing that my actions have an impact beyond myself, and
-                            knowing that whether I change the world or not is completely within my grasp.
+                            I believe that anything that it is not the big, bold idea that changes the world, but rather the details of the execution. It is the pieces that people may not even notice that make an idea, product, or goal tangible. This principle is what I strive to abide by every day: creating beautiful and functional things with a dedication to details will one day change the world.
                         </p>
                     </div>
                 </div>
-                <div class="col-md">
-                    <div class="card about">
+                <div class="col-md d-flex">
+                    <div class="card flex-fill about">
                         <h2 style="color:white">About</h2>
-                        <p style="padding: 3%">It's been said that "Jack of All Trades, Master of None" is a principle that is generally considered bad.
-                            However, when you consider the full phrase: "Jack of All Trades, Master of None, but Better Than a Master of One." I think my interests in so
-                            many diverse fields - cooking, card games, speech, programming, theater, etc. - have a little more weight.
+                        <p style="padding: 3%">
+                            I am an engineer, a singer, dancer, actor, writer, designer, and cook with a serious passion for UI design and data analytics. That, of course, is the long way of saying that I am a creator. I have a background in speech, debate, theater, math, and of course, computer science, and what I’ve found is that all these fields are not so different - they allow me to imagine a world that doesn’t exist, and make it a reality, and that motivation is what defines my aspirations, dreams, and goals.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="row resume">
-                <button onclick="window.open('HirshGuha_Resume.pdf')" data-tippy-content="Download Resume"><i class="fas fa-file-download"></i></button>
             </div>
         </div>
 
@@ -401,11 +470,11 @@
                     <span>Months of Experience</span>
                 </div>
                 <div class="col">
-                    <span data-num="30000" class="num">0</span>+<br>
+                    <span data-num="300000" class="num">0</span>+<br>
                     <span>Lines of Code Written</span>
                 </div>
                 <div class="col">
-                    <span data-num="2000" class="num">0</span>+<br>
+                    <span data-num="20000" class="num">0</span>+<br>
                     <span>Views on my Pages</span>
                 </div>
                 <div class="col">
@@ -509,7 +578,6 @@
         </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js"></script>
         <script src="https://unpkg.com/tippy.js@4.3.5/umd/index.all.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

@@ -119,9 +119,13 @@
         width: 48%;
         margin: 0 1% 20px 1%;
     }
+
+    #highlights h3 {
+        font-size: 1.2em;
+    }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     #highlights .card {
         min-height: 300px;
         width: 98%;

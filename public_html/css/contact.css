@@ -87,7 +87,7 @@
 
 #contact textarea {
      height: 200px;
-     transform: translateX(100px);
+     transform: translateX(50px);
 }
 
 ::placeholder {
@@ -113,7 +113,7 @@
 }
 
 #footer a:hover {
-    color: #00ccff;
+    color: var(--theme-color);
     transform: scale(1.2) translateY(-3px);
 }
 
@@ -122,4 +122,5 @@
     position: absolute;
     margin-top: -30px;
     right: 20px;
+    color: var(--theme-color);
 }

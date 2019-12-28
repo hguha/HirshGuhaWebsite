@@ -1,7 +1,7 @@
 #interests {
     text-align: center;
     background:
-        linear-gradient(to right, rgba(26,42,108, 0.8), rgba(178,31,31, 0.8)),
+        linear-gradient(to right, rgba(200,0,200, 0.8), rgba(150,0,0, 0.9)),
         url("../images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;

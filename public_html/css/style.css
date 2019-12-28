@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-family: "Open Sans";
+    font-family: "Open Sans", "Roboto", sans-serif;
     border: 0;
     padding: 0;
     margin: 0;
@@ -110,12 +110,24 @@ h3 {
     width: 100%;
 }
 
-#about .card {
-    margin: 7% 2% 2%;
-    min-height: 25vw;
+#about .quote {
+    background: var(--background-color);
+    color: var(--text-color);
+    padding-top: 2%;
     opacity: 0;
     transition: 1s;
-    transform: translateY(80px);
+    transform: translateY(50px);
+    text-align: center;
+    font-family: serif;
+}
+
+#about .card {
+    margin: 7% 1% 1%;
+    opacity: 0;
+    transition: 1s;
+    transform: translateX(50px);
+    padding: 6% 2%;
+    min-height: 400px;
 }
 
 #about .card.philosophy {
@@ -127,7 +139,7 @@ h3 {
     background-size: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 3%;
+    transform: translateX(-50px);
 }
 
 #about .about.card {
@@ -139,15 +151,18 @@ h3 {
     background-size: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 3%;
 }
 
 #about .resume.row {
-    padding-top: 20px;
     display:block;
     text-align: center;
     z-index: 10;
     position:relative;
+}
+
+#about .resume button {
+    position: relative;
+    top: 60px;
 }
 
 #highlights {
@@ -178,7 +193,7 @@ h3 {
 
 #highlights .filter {
     text-align: center;
-    word-spacing: 80px;
+    word-spacing: 20px;
 }
 
 #highlights .filter a{
@@ -209,6 +224,7 @@ h3 {
     left:calc(50% - 90px);
     z-index: 0;
     opacity: 0.2;
+    color: var(--theme-color);
 }
 
 #highlights .theater:after {
@@ -315,4 +331,136 @@ button:hover{
 .light:hover {
     background: white;
     transform: scale(1.3);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+/* CONTACT.CSS had to be moved here */
+/* TOP */
+.navbar-logo {
+  width:60px;
+  position: absolute;
+  left: 20;
+  top:5;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.2) rotate3d(0,1,0, 180deg);
+}
+
+#navbar {
+  padding: 20px;
+  text-align:right;
+  color: #fff;
+  position: absolute;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.topbar-menu-item {
+  padding: 0 1%;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-weight:100;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.topbar-menu-item:after {
+    content:'';
+    background: #fff;
+    height: 2px;
+    width: 0;
+    display: block;
+    transition: 0.3s;
+    margin: 0 auto;
+}
+
+.topbar-menu-item:hover:after {
+    width: 100%;
+    background: var(--theme-color);
+}
+
+.topbar-menu-item:hover {
+  color: var(--theme-color);
+  text-decoration: none;
+  transform: translateY(4px);
+}
+
+.openbtn, .closebtn, .overlay-content, .mobile-menu-container {
+  display:none;
+}
+
+/* BOTTOM */
+#contact {
+    background:
+        linear-gradient(to left, rgba(20,0,30, 0.8), rgba(180,0,255, 0.8)),
+        url("../images/hero.jpg");
+    padding: 5% 10%;
+    color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: left;
+}
+
+#contact input, textarea {
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    margin-bottom: 18px;
+    margin-top: 5px;
+    padding:10px;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(-50px);
+}
+
+#contact textarea {
+     height: 200px;
+     transform: translateX(50px);
+}
+
+::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+#footer {
+  padding: 20px;
+  color: #fff;
+  background: #3c3c3c;
+  width: 100%;
+  display: inline-block;
+}
+
+#footer a{
+  display:inline-block;
+  text-align: right;
+  padding: 0;
+  color: #fff;
+  transition:0.2s;
+  letter-spacing: 10px;
+  font-size: 15px;
+}
+
+#footer a:hover {
+    color: var(--theme-color);
+    transform: scale(1.2) translateY(-3px);
+}
+
+#footer .backtotop {
+    font-size: 30px;
+    position: absolute;
+    margin-top: -30px;
+    right: 20px;
+    color: var(--theme-color);
 }

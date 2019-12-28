@@ -19,7 +19,6 @@ let root = document.documentElement;
 let themeColor = "#114499";
 
 function setDarkTheme() {
-    console.log(root);
     root.style.setProperty("--text-color", "#fff");
     root.style.setProperty("--background-color", "#3c3c3c");
     root.style.setProperty("--theme-color", themeColor = "#00ccff");
@@ -41,10 +40,6 @@ function inView(id) {
 let bars = document.getElementsByClassName("progress-bar");
 var barsAnimated = false;
 
-if (window.innerWidth < 768) {
-    animateBars();
-}
-
 function animateBars() {
     for (let i = 0; i < bars.length; i++) {
         bars[i].style.width = bars[i].getAttribute("aria-valuenow") + "%";
@@ -54,12 +49,12 @@ function animateBars() {
 //INTERESTS
 var toggles = document.getElementsByClassName("toggle");
 var content = [
-    "I started playing table tennis when I was about 10 or 11. My dad had a ping pong table in his office, and we would spend some time after work playing a little bit. He never went easy on me. I would just desperately hope to hit it over the net, and he would smash it back at me everytime. He was quite good at table tennis, even competeting in tournaments. While that was frustrating, in retrospect, it was probably the only thing that made me any good at the game. For years, we played on that office table, until one day, when I was 18, I finally beat him. It felt amazing, and I knew this was a game that I would play for years to come.",
-    "As a member of two indian communities - Pratichi and the Kansas City Bengali Association - I have been able to grow up with an incredible ammount of culture in my life, despite being born and raised here in America. In that time, I've done an incredible ammount in helping set up and run pujas(indian festivals), and plan events.",
-    "I started playing bridge only in 2018, and fell in love with it pretty quickly. Once again, this was something my dad had been playing for years, and was quite good at. With his encourgement, I started the KU bridge club, and was delighted to find a number of other enthusiasts to play with every week. Finally, I got to the point where I felt ready to compete. PLaying with my dad, we won the very first tournament I went to, which felt great. I plan on continuing to compete.",
-    "Both of my parents were excellent cooks, and so I've grown up eating some incredible food. However, other than helping them with cutting or cleaning or moving food, I really was never involved in the kitchen. That is, until I got my own place, and truly found a passion for cooking. Indian, American, Italian, Greek, Mexican, I loved and made it all. To this day, I'm always experiementing, and pushing the boundaries of what I can make.",
-    "I started doing Theater when I was in 5th grade. I couldn't stop getting lead roles. I was a god. Kidding. I got a few lead roles, and a number of chorus member roles. But for some reason, I loved the people, and I stuck around for a while. 8 years to be percise. Theater was a big part of my life.",
-    "I took Debate my freshman year of high school on a friends reccomendation, not really sure what to expect. Then I won the first tournament I went to. And the second one. And the third one. And all of them my freshman year, I was undefeated. Then I did Forensics. And I sucked. Very badly, my freshman year, I never won a trophy in Forensics. But for some reason, I stuck with it, and by the end of high school, I came up with a trophy from Nationals, a State Championship, and literally dozens of medals."
+    "Growing up and playing table tennis with my dad after work was one of my favorite pastimes, and remains so to this day, with the only real difference between the power, spin, and control at which we play. In fact, the same is true of many of the racquet sports I play, including racquetball, badminton, and tennis. However, table tennis was the game that I had the most passion for and grew the best at.",
+    "As a member of my Indian community, I set up pujas, organize festivals, serve food at picnics and clean up. This is something I’ve done for as long as I can remember, and gives me an incredible sense of family. As a tutor; since high school, I’ve tutored students in English, Physics, Calculus, Pre-Calculus, Linear Algebra, and Computer Science. As a college student, I give tours to prospective students for the Honors Program as an Ambassador and organize various outreach programs on behalf of my school.",
+    "I’m a firm believer that contract bridge is not a game of luck. As far as card games go, it’s one where only skill can win tournaments. Whether you get the worst cards or the best, it’s only how you do relative to every other team that determines you’re rank - and it is that concept that makes bridge wonderful. The math, technique, bidding sequences, and people are what led me to found and preside the Bridge Club at my school.",
+    "I started cooking when I was 18 years old and fell in love with the creativity and freedom it brought me. Before then, making anything beyond a pancake from the store-bought mix truly was beyond a daunting task, so learning to master cuisines from every part of the world is truly liberating. In fact, it was the start of a Sunday tradition in my household, where every Sunday, myself, my father, and my girlfriend spend the evening cooking and refining our skills.",
+    "Nine years of public theater has honed my communication, leadership, and teamwork in ways that very few other activities have. Every role I’ve gotten is an oppurtunity to express myself in a new and creative way, while also crafting a comfortability with public speaking, and leading. I met some of my best friends through this activity, and have recently gotten into the directing and stage managing side of things.",
+    "Had I known that Speech and Debate would involve waking up at 5:00 AM to attend tournaments before I started, would I have gone on to qualify for state 31 times, qualify for nationals twice, win the state championship twice, and end as a national semifinalist in Informative Speech? Probably not. In that sense, I suppose it’s a good thing nobody told me. "
 ]
 
 var prevId = 1;
@@ -75,7 +70,7 @@ $(document).ready(function() {
         $(".text-" + id).html(content[id - 1]);
         $(".text-" + prevId).hide();
         $("#" + prevId)[0].style.color = "white";
-        $(".text-" + id).fadeIn();
+        $(".text-" + id).show();
         prevId = id;
     });
 });
@@ -84,7 +79,7 @@ $(document).ready(function() {
 var i = 0;
 var firstName = 'HIRSH ';
 var lastName = 'GUHA';
-var speed = 100;
+var speed = 50;
 window.onload = function() {
     if (window.innerWidth > 768) {
         typeWriter();
@@ -120,19 +115,28 @@ window.onscroll = function() {
 };
 
 var statsShown = false, barsAnimated = false, aboutShown = false,
-    contactShown = false, highlightsShown = false, interestsShown = false;
-    
+    contactShown = false, highlightsShown = false, interestsShown = false,
+    projectsShown = false;
+
 function animate() {
-    if (inView('about') && !aboutShown) {
-        $("#about .card").css({
+    if (inView('projects') && !projectsShown) {
+        $("#projects .project-slider").css({
             "opacity": 1,
-            "transform": "translateY(0px)"
+            "transform": "translateY(0)"
+        });
+        projectsShown = true;
+    }
+
+    else if (inView('about') && !aboutShown) {
+        $("#about .card, #about .quote").css({
+            "opacity": 1,
+            "transform": "translateX(0px)"
         });
         aboutShown = true;
     }
     else if (inView('interests') && !interestsShown) {
         $('#interests .toggle').each(function(i) {
-            $(this).delay(i*300).fadeTo("fast", 1);
+            $(this).delay(i*100).fadeTo("fast", 1);
         }).promise().done(function() {
             $('#interests .text').fadeTo("fast", 1);
         });
