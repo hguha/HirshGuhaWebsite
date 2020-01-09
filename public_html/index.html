@@ -83,8 +83,10 @@
 
         <div id="toggle">
             <h3>Choose your experience:</h3>
-            <button class="dark" onclick="setDarkTheme()" data-tippy-content="Dark">Dark</button>
-            <button class="light" onclick="setLightTheme()" data-tippy-content="Light">Light</button><br>
+            <button id="theme-toggle" onclick="toggleExperience('toggle-theme')" data-tippy-content="Change To Dark Mode">Dark</button>
+            <button id="font-toggle" onclick="toggleExperience('toggle-font')" data-tippy-content="Change To Serif">Serif</button>
+            <button id="menu-toggle" onclick="toggleExperience('toggle-menu')" data-tippy-content="Change To Mobile Menu">Mobile</button>
+            <br>
             This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me using jQuery
 
         </div>

@@ -54,10 +54,6 @@
   transform: translateY(4px);
 }
 
-.openbtn, .closebtn, .overlay-content, .mobile-menu-container {
-  display:none;
-}
-
 /* BOTTOM */
 #contact {
     background:

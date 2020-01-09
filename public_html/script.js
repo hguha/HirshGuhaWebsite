@@ -7,7 +7,7 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-111498872-4');
 
-tippy('button', {
+const instance = tippy('button', {
     animation: 'scale',
     duration: 400,
     arrow: true,
@@ -18,16 +18,37 @@ tippy('button', {
 let root = document.documentElement;
 let themeColor = "#114499";
 
-function setDarkTheme() {
-    root.style.setProperty("--text-color", "#fff");
-    root.style.setProperty("--background-color", "#3c3c3c");
-    root.style.setProperty("--theme-color", themeColor = "#00ccff");
-}
+var darkModeOn = false;
+var serifFont = false;
+var usingMobileMenu = false;
+function toggleExperience(element) {
+    switch(element) {
+        case "toggle-theme":
+            root.style.setProperty("--text-color", darkModeOn ? "#3c3c3c" : "#fff");
+            root.style.setProperty("--background-color", darkModeOn ? "#fff" : "#3c3c3c");
+            root.style.setProperty("--theme-color", themeColor = darkModeOn ? "#114499" :  "#00ccff");
+            darkModeOn = !darkModeOn;
+            instance[0].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
+            $("[id$='-toggle']").css({"background-color": darkModeOn ? "white" : "black", "color": darkModeOn ? "black" : "white"});
+            $("#theme-toggle").html(darkModeOn ? "Light" : "Dark");
+            break;
+        case "toggle-font":
+            root.style.setProperty("--font", serifFont ? "'Open Sans', 'Roboto', sans-serif" : "serif");
+            serifFont = !serifFont;
+            instance[1].setContent(serifFont ? "Change to Sans-Serif Mode" : "Change To Serif");
+            $("#font-toggle").html(serifFont ? "Serif" : "Sans");
+            break;
+        case "toggle-menu":
+            var curMenu = usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item, .noncode") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
+            var hiddenMenu = !usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item, .noncode") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
+            curMenu.css("display", "block");
+            hiddenMenu.css("display", "none");
+            usingMobileMenu = !usingMobileMenu;
+            instance[2].setContent(usingMobileMenu ? "Change to Top Menu" : "Change To Mobile Menu");
+            $("#menu-toggle").html(usingMobileMenu ? "Top" : "Mobile");
+            break;
+    }
 
-function setLightTheme() {
-    root.style.setProperty("--text-color", "#3c3c3c");
-    root.style.setProperty("--background-color", "#fff");
-    root.style.setProperty("--theme-color", themeColor = "#114499");
 }
 
 //SKILLS
