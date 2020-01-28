@@ -3,15 +3,6 @@
 <HEAD>
 <link rel="stylesheet" href="css/style.css">
 <style>
-.error button {
-  border: 2px solid #fff;
-  color: white;
-}
-
-.error button:hover {
-  background-color: white;
-  color: #3c3c3c;
-}
 
 /* 404 page styling */
 .error h1{
@@ -26,14 +17,28 @@
   background: #3c3c3c;
 }
 </style>
-<link rel='icon' href='images/favicon.png' type='image/x-icon'/ >
+<link rel='icon' href='images/hg-logo-black.png' type='image/x-icon'/ >
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 </HEAD>
 
 <body class="error-body">
   <div class="error">
      <h1>404</h1>
-     I guess this page was moved or didn't exist. Sorry!<br>
-     <button onclick="window.location.href = '/';">Back to Home</button>
+     <div style="padding-bottom:2%">I guess this page was moved or didn't exist. Sorry!</div>
+     <button onclick="window.location.href = '/';" data-tippy-content="Back To Home"><i class="fas fa-backward"></i></button>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@4.3.5/umd/index.all.min.js"></script>
+  <script>
+  const instance = tippy('button', {
+      animation: 'scale',
+      duration: 400,
+      arrow: true,
+      size: "large",
+      placement: "bottom"
+  });
+  </script>
 <body>
 </HTML>
