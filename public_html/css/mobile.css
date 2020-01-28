@@ -121,6 +121,10 @@
         font-size: 1.2em;
     }
 
+    #blog .post {
+        width: 96%;
+    }
+
     #navbar, #menu-toggle, .navbar-logo, .header, .top-menu-item, .noncode {
         display: none !important;
     }

@@ -186,9 +186,6 @@ function animate() {
         });
         contactShown = true;
     }
-
-
-
 }
 
 //STATS
@@ -232,8 +229,7 @@ function closeNav() {
 }
 
 //FOOTER
-var curYear = document.getElementById("curYear");
-curYear.innerHTML = new Date().getFullYear();
+document.getElementById("curYear").innerHTML = new Date().getFullYear();
 
 //CONTACT
 function submitForm() {
@@ -247,12 +243,12 @@ function submitForm() {
 }
 
 //HIGHLIGHTS
+
 var $filters = $('.filter [data-filter]'),
     $cards = $('.cards [data-type]');
 
 $filters.on('click', function(e) {
     e.preventDefault();
-    var $this = $(this);
 
     $filters.removeClass('active');
     $(this).addClass('active');
@@ -269,3 +265,32 @@ $filters.on('click', function(e) {
         });
     }
 });
+
+//BLOG
+let blogs= [
+    {
+        image: "images/code-library.png",
+        title: "The Beginning of Something Great",
+        date: "27th January, 2020",
+        content:"It is my goal to start a small blog for various pieces of my life. There are two main goals I hope to accomplish with my blog: cooking recipes, and coding tutorials. To this effect, I was unable to find a blogging platform that I thoroughly enjoyed, and found that the cost-benefit analysis was in favor of benefit(most required Node, and the particular means through which I host my site will not allow me to install Node packages. Even if I self-hosted, I did not find any Node.Js package particularly appear). That being the case, my only choice is to write my own blogging platform. That is what I have done here. While at the time of this blog coming out, the platform is still in it's earlier stages, I will continue to develop it, perhaps eventually adding it to my <a href='#projects'>Projects</a> at some point, where you all can enjoy a lightweight, blogging platform that requires nothing more than an included script in your JS file. <br><br> As I seek to maintain a cookbook, I hope to instead adept my website to contain a cookbook in itself - in a blog-like fashion, I can post recipes easily, and conveniently. I imagine part of the reason I don't maintain a strict cookbook PDF is the effort required in updating a document, translating it into a pdf, and then pushing that to my site exceeds my desires(After all, I'd rather spend that time coming up with more amazing recipes, right?). In that way, this platform I created is going to speed up that process, and hopefully, result in more recipes for you all to enjoy. <br><br> Another important piece is my ability to write tutorials. I have built five websites, and I think that when it comes to writing your own website in pure HTML, Javascript, and CSS(which is the method that gives you entire freedom to build anything you dream, and I truly believe is just as easy to learn as other website builders like Wix, Wordpress, or Squarespace), that I have enough expertise to lay it out clearly. In this day and age, everyone and their dog want their own website, and they should be able to design it exactly as they like, with no exceptions. I want to show you how, and this blog is my means to an end."
+    }
+];
+
+let preview = blogs[0].content.substring(0, 200)+"...";
+
+//create home screen showing newest blog
+    // document.getElementById("image").innerHTML = "<img src='"+blogs[0].image+"' />";
+    document.getElementById("title").innerHTML = blogs[0].title;
+    document.getElementById("date").innerHTML = blogs[0].date;
+    document.getElementById("preview").innerHTML = preview;
+
+function openBlog() {
+    Swal.fire({
+      title: blogs[0].title,
+      html: blogs[0].date+"<br><br>"+"<div style='text-align:left'>"+blogs[0].content+"</div>",
+      showConfirmButton: false,
+      width: "90%",
+      // imageUrl: blogs[0].image,
+      showCloseButton: true,
+    });
+}
