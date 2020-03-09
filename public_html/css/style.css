@@ -20,6 +20,7 @@ body {
 
 ::selection {
     background: var(--theme-color);
+    color: var(--background-color);;
 }
 
 .content {
@@ -65,6 +66,61 @@ h4 {
     color: transparent;
      -webkit-text-stroke: 1px var(--background-color);;
 }
+
+.navbar-logo {
+    width:60px;
+    position: absolute;
+    left: 20;
+    top:5;
+    transition: 1s;
+    cursor: pointer;
+  }
+  
+  .navbar-logo:hover {
+      transform: scale(1.2) rotate3d(0,1,0, 180deg);
+  }
+  
+  #navbar {
+    padding: 20px;
+    text-align:right;
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .topbar-menu-item {
+    padding: 0 1%;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-weight:100;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  
+  .topbar-menu-item:after {
+      content:'';
+      background: #fff;
+      height: 2px;
+      width: 0;
+      display: block;
+      transition: 0.3s;
+      margin: 0 auto;
+  }
+  
+  .topbar-menu-item:hover:after {
+      width: 100%;
+      background: var(--theme-color);
+  }
+  
+  .topbar-menu-item:hover {
+    color: var(--theme-color);
+    text-decoration: none;
+    transform: translateY(4px);
+  }
 
 .social-media {
     position: relative;
@@ -172,9 +228,6 @@ h4 {
 }
 
 #blog {
-    background:
-        linear-gradient(to right, rgba(253,200,48, 0.8), rgba(243,115,53, 0.8)),
-        url("../images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -279,10 +332,10 @@ h4 {
 #highlights .card:after {
     font-weight:900;
     font-family:'Font Awesome 5 Free';
-    font-size: 150px;
+    font-size: 130px;
     position:absolute;
     top:0px;
-    left:calc(50% - 90px);
+    left:calc(50% - 80px);
     z-index: 0;
     opacity: 0.1;
     color: var(--theme-color);
@@ -318,12 +371,17 @@ h4 {
 }
 
 #stats {
+    background:
+        linear-gradient(to right, rgba(253,200,48, 0.8), rgba(243,115,53, 0.8)),
+        url("../images/hero.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    color: var(--text-color);
+    padding: 2% 0 1% 0;
+    color: var(--background-color);
     text-align: center;
+    margin: 1% 0 ;
     font-size: 3.6em;
 }
 
@@ -468,6 +526,43 @@ button:hover{
     line-height: 150%;
     white-space: pre-wrap;
 }
+.blog-overlay {
+    position: fixed;
+    background: black;
+    width: 0%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0.6;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+#blog-list {
+    position: fixed;
+    background: white;
+    width: 95%;
+    height: 0%;
+    top: 10%;
+    left: 2.5%;
+    z-index: 102;
+    display: block;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#listing, .blogclosebtn {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.blogclosebtn {
+    position: absolute;
+    right: 10px;
+    font-size: 2em;
+}
+
+
 .swal-modal {
     width:95% !important;
     padding: 1%;

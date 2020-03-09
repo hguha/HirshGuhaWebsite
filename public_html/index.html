@@ -482,42 +482,51 @@
             </div>
         </div>
 
-        <div id="blog">
+        <!-- <div id="blog">
             <div class="post">
                 <h2>Blog</h2>
                 <hr>
                 <div id="image"></div>
                 <div id="date"></div>
                 <div id="title"></div>
-                <span id="preview"></span><a href="javascript:openBlog();">READ MORE</a>
+                <span id="preview"></span><a href="javascript:openBlog(0);">READ MORE</a>
                 <br><br>
-                <button class="disabled" onclick="submitForm()" data-tippy-content="'View All' will be available after (2) more blogs are posted"><i class="fas fa-cubes"></i></button>
+                <button onclick="openBlogList()" data-tippy-content="'View All' will be available after (2) more blogs are posted"><i class="fas fa-cubes"></i></button>
+            </div>
+
+            BLOG LIST
+            <div class="blog-overlay"></div>
+                <div id="blog-list">
+                    <a href="javascript:void(0)" class="blogclosebtn" onclick="closeBlogListing()">&times;</a>
+                    <div id="listing">
+                        Here comes the sun
+                    </div>
+                </div>
+        </div> -->
+
+        <div id="stats">
+            <div class="row">
+                <div class="col">
+                    <span data-num="100" class="num">0</span>+<br>
+                    <span>Months of Experience</span>
+                </div>
+                <div class="col">
+                    <span data-num="30000" class="num">0</span>+<br>
+                    <span>Lines of Code Written</span>
+                </div>
+                <div class="col">
+                    <span data-num="20000" class="num">0</span>+<br>
+                    <span>Views on my Pages</span>
+                </div>
+                <div class="col">
+                    <span data-num="3000" class="num">0</span>+<br>
+                    <span>Coffees Consumed</span>
+                </div>
             </div>
         </div>
 
-
         <!-- SKILLS -->
         <div id="skills">
-            <div id="stats">
-                <div class="row">
-                    <div class="col">
-                        <span data-num="100" class="num">0</span>+<br>
-                        <span>Months of Experience</span>
-                    </div>
-                    <div class="col">
-                        <span data-num="30000" class="num">0</span>+<br>
-                        <span>Lines of Code Written</span>
-                    </div>
-                    <div class="col">
-                        <span data-num="20000" class="num">0</span>+<br>
-                        <span>Views on my Pages</span>
-                    </div>
-                    <div class="col">
-                        <span data-num="3000" class="num">0</span>+<br>
-                        <span>Coffees Consumed</span>
-                    </div>
-                </div>
-            </div>
             <hr>
             <div class="row">
                 <div class="col">
@@ -615,7 +624,6 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="slider.js" differ></script>
         <script src="script.js"></script>
-        <script src="blog-posts/blog.js"></script>
 
     </div>
 
