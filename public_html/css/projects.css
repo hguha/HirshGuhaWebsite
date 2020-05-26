@@ -32,6 +32,11 @@
     cursor: grab;
     margin: 0;
     padding: 1% 0;
+    color: white;
+}
+
+#small-projects .description {
+    padding: 2% 5% 0 5%;
 }
 
 #small-projects:active {

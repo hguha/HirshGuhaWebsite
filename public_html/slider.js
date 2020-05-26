@@ -52,15 +52,15 @@ var projects = [
     image: "libme.png",
     features: [
       {
-        icon: "walking",
+        icon: "book",
         caption: "Hold system ensures that books are held books are immediately checked out upon return"
       },
       {
-        icon: "ruler",
+        icon: "users-cog",
         caption: "Admin and User interfaces ensure a 360° experience for a library"
       },
       {
-        icon: "adjust",
+        icon: "search",
         caption: "Keyword searching by partial name, author, or ISBN makes it a breeze to find a book"
       },
     ],
@@ -142,9 +142,33 @@ var projects = [
   }
 ]
 
+var games = [
+{name:"checkers",description:"The classic game of checkers with a special algorithm to calculate all possible jumps for a given piece"},
+{name:"chess",description:"The classic game of chess with a special algorithm to calculate all possible jumps for a given piece"},
+{name:"connect4",description:"Exactly what you expect"},
+{name:"dotsandboxes",description:"Using a node and graph data structure instead of a grid, try to create more boxes than your friend!",},
+{name:"minesweeper",description:"The classic game of minesweeper with many additional features - my take on a recursive revealing algorithm",},
+{name:"rubikscube",description:"my take on a functioning Rubiks Cube model, using CSS shaders controlled with a mouse",},
+{name:"sudoku",description:"play randomly generated sudoku, create your own, or use the built in backtracking algorithm to have a board solved for you",},
+{name:"tetris",description:"As a former compeitive tetris player(7th in the world!), I thought it fitting to recreate my favorite game and learn it's matrix arithmetic"},
+{name:"tictactoe",description:"The classic game of tic-tic-toe for one or two players, featuring an unbeatable AI",},
+]
+
 
 $(document).ready(function(){
-
+  function getGamesDOM(g) {
+    var card = `<div class="card">
+                        <img src="images/${g.name}.png">
+                        <div class="overlay">
+                            <h3>${g.name.toUpperCase()}</h3>
+                            ${g.description}
+                            <br><button onclick="window.open('https://github.com/hguha/puzzlegames.js/tree/master/${g.name}','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
+                            <button onclick="window.location.href = 'games/${g.name}/index.html';" data-tippy-content="Use It"><i class="fas fa-binoculars"></i></button>
+                        </div>
+                    </div>`
+    return card;
+  }
+  
   function getProjectDOM(p) {
     var card = `<div class="card">
                 <h3>${p.title}</h3>
@@ -172,8 +196,38 @@ $(document).ready(function(){
     return card;
   }
 
+  function getProjectDOM(p) {
+    var card = `<div class="card">
+                <h3>${p.title}</h3>
+                <div class="languages">${p.languages.join(" • ").toUpperCase()}</div>
+                <div class="description">A website entirely coded towards me in order to demonstrate my abilities in web design and dynamic websites</div>
+                <hr>
+                <div class="row"><div class="col-md-6 col-sm-12">`
+    for (const f of p.features) {
+      card+= `<div class="feature">
+                <span class="fa-stack fa-2x">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-${f.icon} fa-stack-1x"></i>
+                </span>
+                <span class="text">${f.caption}<span>
+            </div>`
+    }
+    card += `</div><div class="col-md-6 col-sm-12">
+              <img src="images/${p.image}" width="90%">
+          </div></div><br><hr>`
+    for (const b of p.buttons) {
+      card+= `<button onclick="window.open('${b.link}','_blank');" data-tippy-content="${b.tooltip}"><i class="${b.icon}"></i></button>`
+    }
+    card+="</div>";
+    return card;
+  }
+
   for(p of projects) {
     $(".project-slider").append(getProjectDOM(p));
+  }
+
+  for(g of games) {
+    $(".small-projects").append(getGamesDOM(g));
   }
   
   makeSlick();
