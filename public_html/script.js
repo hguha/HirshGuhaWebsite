@@ -20,7 +20,8 @@ function initTippy() {
 //THEME
 let root = document.documentElement;
 let themeColor = "#114499";
-var darkModeOn = false;
+var darkModeOn = (localStorage.getItem("dark")) == "true" ? true: false;
+console.log(darkModeOn);
 var serifFont = false;
 var usingMobileMenu = false;
 function toggleExperience(element) {
@@ -33,6 +34,7 @@ function toggleExperience(element) {
             instance[0].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
             $("[id$='-toggle']").css({"background-color": darkModeOn ? "white" : "black", "color": darkModeOn ? "black" : "white"});
             $("#theme-toggle").html(darkModeOn ? "Light" : "Dark");
+            localStorage.setItem("dark", darkModeOn);
             break;
         case "toggle-font":
             root.style.setProperty("--font", serifFont ? "'Open Sans', 'Roboto', sans-serif" : "serif");
@@ -54,6 +56,7 @@ function toggleExperience(element) {
 }
 
 //SKILLS
+
 function inView(id) {
     const bounding = document.getElementById(id).getBoundingClientRect();
     const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
@@ -191,6 +194,31 @@ function animate() {
 }
 
 //STATS
+
+function getSkills() {
+    let stats = [
+        {name:"PHP", value: 80},
+        {name:"Javascript", value: 95},
+        {name:"C/C++", value: 70},
+        {name:"Python", value: 90},
+        {name:"SQL", value: 80},
+        {name:"Haskell", value: 75},
+        {name:"Web Design", value: 80},
+        {name:"App Design", value: 60},
+        {name:"Content Writing", value: 75},
+        {name:"Data Analytics", value: 75},
+        {name:"Graphics/Logos", value: 65},
+        {name:"Web Development", value: 80}
+    ];
+    let i = 0;
+    for(s of stats) {
+        const el = i < 6 ? ".code" : ".noncode"
+        $(el).append(`${s.name} <div class="progress"><div class="progress-bar" aria-valuenow="${s.value}">${s.value}%</div></div>`);
+        i++;
+    }
+}
+getSkills();
+
 function countUp() {
     $('#stats .num').each(function() {
         var $this = $(this);

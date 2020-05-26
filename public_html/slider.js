@@ -97,7 +97,7 @@ var projects = [
     title: "Sudoku Solver",
     languages: ["haskell"],
     description: "Deterministic non-polynomial time sudoku solver written in haskell",
-    image: "sudoku.png",
+    image: "solver.png",
     features: [
       {
         icon: "eye-slash",
@@ -113,8 +113,7 @@ var projects = [
       },
     ],
     buttons: [
-      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/Skynet" },
-      { icon: "fas fa-video", tooltip: "Watch Video", link: "https://www.youtube.com/watch?v=aIcJxIsbZ6k" }
+      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/SudokuSolver" },
     ],
   },
   {
@@ -232,6 +231,7 @@ $(document).ready(function(){
   
   makeSlick();
   initTippy();
+  if(darkModeOn) toggleExperience("toggle-theme");
   //big projects
   $('.project-slider').slick({
         centerMode: true,
