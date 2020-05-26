@@ -7,10 +7,19 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-111498872-4');
 
+let instance = null;
+function initTippy() {
+    instance = tippy('button', {
+        animation: 'scale',
+        duration: 400,
+        arrow: true,
+        size: "large"
+    });
+}
+
 //THEME
 let root = document.documentElement;
 let themeColor = "#114499";
-
 var darkModeOn = false;
 var serifFont = false;
 var usingMobileMenu = false;

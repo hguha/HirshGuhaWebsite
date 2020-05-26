@@ -46,6 +46,30 @@ var projects = [
     ],
   },
   {
+    title: "LibMe",
+    languages: ["PHP", "javascript", "SQL"],
+    description: "An entirely online library system for handling books",
+    image: "libme.png",
+    features: [
+      {
+        icon: "walking",
+        caption: "Hold system ensures that books are held books are immediately checked out upon return"
+      },
+      {
+        icon: "ruler",
+        caption: "Admin and User interfaces ensure a 360° experience for a library"
+      },
+      {
+        icon: "adjust",
+        caption: "Keyword searching by partial name, author, or ISBN makes it a breeze to find a book"
+      },
+    ],
+    buttons: [
+      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/LibMe" },
+      { icon: "fas fa-video", tooltip: "Watch Video", link: "https://drive.google.com/file/d/1NqXyEsPVaR5II4Z4Y8OG0xAQt8xvY7JV/view?usp=sharing" }
+    ],
+  },
+  {
     title: "Skynet Security",
     languages: ["python", "raspberry-pi", "lidar"],
     description: "A light/sound based security system using object detection, image classification, and proximity detection on a raspberry pi",
@@ -140,7 +164,7 @@ $(document).ready(function(){
     }
     card += `</div><div class="col-md-6 col-sm-12">
               <img src="images/${p.image}" width="90%">
-          </div></div> <br><hr>`
+          </div></div><br><hr>`
     for (const b of p.buttons) {
       card+= `<button onclick="window.open('${b.link}','_blank');" data-tippy-content="${b.tooltip}"><i class="${b.icon}"></i></button>`
     }
@@ -149,17 +173,11 @@ $(document).ready(function(){
   }
 
   for(p of projects) {
-    $(".project-slider").prepend(getProjectDOM(p));
+    $(".project-slider").append(getProjectDOM(p));
   }
-  const instance = tippy('button', {
-      animation: 'scale',
-      duration: 400,
-      arrow: true,
-      size: "large"
-  });
   
   makeSlick();
-
+  initTippy();
   //big projects
   $('.project-slider').slick({
         centerMode: true,
@@ -205,7 +223,6 @@ $(document).ready(function(){
      });
 
 });
-
 
 
 //overlay stuff
