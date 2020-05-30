@@ -5,26 +5,33 @@ class DotsAndBoxes {
   constructor(player1, player2) {
     this.player = [player1, player2];
     this.clickedBorder = [];
-    this.$borderID = $(".side, .top");
     this.currentPlayer = 0;
+    this.total = 0;
   }
 
-  updateClickedBoxArray(borderID) {
+  selectPiece(borderID) {
     this.clickedBorder.push(parseInt(borderID));
-      if (!this.checkForWinner()) {
+      if (!this.updateBoard()) {
         //switch turns
         this.currentPlayer ^= 1;
         $("#next-turn").html("Player " + (this.currentPlayer + 1));
       }
   }
 
-  checkForWinner() {
-    var copyWinCombo = winningCombos;
+  checkWinner() {
+    let one = this.player[0].score, two = this.player[1].score;
+    if(one == two) $("#messages").html("It's a draw!");
+    if(one > two) $("#messages").html("Player1 Wins!");
+    if(one < two) $("#messages").html("Player2 Wins!");
+  }
+
+  updateBoard() {
+    var copy = winningCombos;
     var completedBox = false;
-      for (var i = 0; i < copyWinCombo.length; i++) {
+      for (var i = 0; i < copy.length; i++) {
         var found = false;
-        for (var j = 0; j < copyWinCombo[i].length; j++) {
-          if (this.clickedBorder.includes(copyWinCombo[i][j])) {
+        for (var j = 0; j < copy[i].length; j++) {
+          if (this.clickedBorder.includes(copy[i][j])) {
             found = true;
   
           } else {
@@ -34,16 +41,20 @@ class DotsAndBoxes {
         }
   
         if (found) {
-         $("#box"+i).css("background", this.player[this.currentPlayer].playerColor);
-         var output = copyWinCombo.slice(i, i+1);
-         copyWinCombo[i] = [];
-         this.player[this.currentPlayer].boxesWon.push(output);
-         var lastIndex = this.clickedBorder[this.clickedBorder.length -1];
-          $("#"+lastIndex).unbind("mouseenter");
-          $("#"+lastIndex).unbind("mouseleave");
-          $("#"+lastIndex).css("background", "#505050");
+            $("#box"+i).css("background", this.player[this.currentPlayer].playerColor);
+            copy[i] = [];
+            this.player[this.currentPlayer].score++;
+            $("#p"+(this.currentPlayer+1)).html(this.player[this.currentPlayer].score);
+            
+            var lastIndex = this.clickedBorder[this.clickedBorder.length -1];
+            $("#"+lastIndex).unbind("mouseenter");
+            $("#"+lastIndex).unbind("mouseleave");
+            $("#"+lastIndex).css("background", "#505050");
           
-          //see if someone won?
+            this.total++;
+            if(this.total == 16) {
+              this.checkWinner();
+            }
 
           completedBox = true;
        }
@@ -54,8 +65,8 @@ class DotsAndBoxes {
 }
 
 window.onload = () => {
-  let player1 = { playerScore: 0, playerColor: "#5cfcff", boxesWon: []  }
-  let player2 = {playerScore: 0, playerColor: "#ff0051", boxesWon: [] }
+  let player1 = { score: 0, playerColor: "#5cfcff" }
+  let player2 = {score: 0, playerColor: "#ff0051" }
   
       var board = new DotsAndBoxes(player1, player2);
  
@@ -63,7 +74,7 @@ window.onload = () => {
    //handle mouse input
    $(".side, .top").on("click", function() {
      var id = $(this).attr("id");
-     board.updateClickedBoxArray(id);
+     board.selectPiece(id);
    });
  
   $(".side, .top")

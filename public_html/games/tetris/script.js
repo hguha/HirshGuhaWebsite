@@ -4,10 +4,9 @@ class Tetris extends Board {
     constructor(board) {
         super(board);
         this.turn = -1;
-        this.running;
         this.newPiece = true;
         this.piece;
-        this.colorMapping = [null, "red", "blue", "green", "cyan", "yellow", "orange", "purple"]
+        this.colorMapping = ["red", "blue", "green", "cyan", "yellow", "orange", "purple"]
 
     }
     selectPiece(row, col) {} //undo the board's default
@@ -76,7 +75,7 @@ class Tetris extends Board {
 
         ];
         let index = Math.floor(Math. random() * pieces.length);
-        return pieces[index];
+        return pieces[2];
     }
 
     updateScreen() {
@@ -231,7 +230,7 @@ window.onload = () => {
 
 document.addEventListener('keydown', (event) => {
     switch(event.keyCode) {
-        case 32: board.draw(); break;
+        case 32: board.forceDown(); break;
         case 37: board.move(-1); break;
         case 39: board.move(1); break;
         case 38: board.rotate(board.piece.shape, 1); break;

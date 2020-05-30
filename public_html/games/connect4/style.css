@@ -1,17 +1,20 @@
 body {
     text-align: center;
     overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin-top: 5%; */
+    background: lightgray;
+    padding: 2%;
 }
 
 #board-container {
     display: flex;
     justify-content: center;
-    height: 100vh;
     align-items: center;
     margin-bottom: 10%;
 }
 
-table, tr, td {
+tr, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -20,6 +23,7 @@ td {
     width: 75px;
     height: 75px;
     text-align: center;
+    cursor: pointer;
     background: gray;
 }
 
@@ -32,7 +36,20 @@ td {
     transform: translateY(-500px);
 }
 
-td:hover {
-    background: gray !important;
+.player .fa {
+    font-size: 30px;
+}
+
+.drop {
+    background: none;
+    border: none;
+    color: red;
     cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.drop:hover {
+    background: none;
+    opacity: 1;
 }

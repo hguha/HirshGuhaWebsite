@@ -161,7 +161,7 @@ $(document).ready(function(){
                         <div class="overlay">
                             <h3>${g.name.toUpperCase()}</h3>
                             ${g.description}
-                            <br><button onclick="window.open('https://github.com/hguha/puzzlegames.js/tree/master/${g.name}','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
+                            <br><button onclick="window.open('https://github.com/hguha/puzzles.js/tree/master/${g.name}','_blank');" data-tippy-content="View Code"><i class="fab fa-github"></i></button>
                             <button onclick="window.location.href = 'games/${g.name}/index.html';" data-tippy-content="Use It"><i class="fas fa-binoculars"></i></button>
                         </div>
                     </div>`
