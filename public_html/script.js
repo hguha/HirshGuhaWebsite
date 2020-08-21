@@ -275,6 +275,34 @@ function submitForm() {
 
 //HIGHLIGHTS
 
+function getHighlights() {
+    let highlights = [
+        {type:"academic", name: "FAS Scholarship"},
+        {type:"theater", name: "Aladdin in Aladdin"},
+        {type:"bridge", name: "Council Bluffs Regional Gold Rush 1st Place"},
+        {type:"speech", name: "KSHAA State Champion in Poetry"},
+        {type:"academic", name: "HYK Achievement Award"},
+        {type:"bridge", name: "Tulsa Regional Tournament 3rd Place"},
+        {type:"theater", name: "Prince Charming in Cinderella"},
+        {type:"academic", name: "JL Constant Scholarship"},
+        {type:"speech", name: "NSDA National Semifinalist"},
+        {type:"theater", name: "Sebastian in Twelvth Night"},
+        {type:"speech", name: "KSHAA State Champion in Informative"},
+        {type:"bridge", name: "Blue Springs Tournament 1st Place"},
+        {type:"academic", name: "Allen Engineering Scholarship"},
+        {type:"bridge", name: "President of the KU Bridge Club"},
+        {type:"academic", name: "Chancellors Top Scholar"},
+        {type:"academic", name: "McClendon Scholarship"}
+    ]
+
+    for(h of highlights) {
+        let html = `<div class="card ${h.type}" data-type="${h.type}"><h3>${h.name}</h3></div>`
+        $(".cards").append(html);
+    }
+}
+
+getHighlights();
+
 var $filters = $('.filter [data-filter]'),
     $cards = $('.cards [data-type]');
 

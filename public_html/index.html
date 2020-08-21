@@ -8,7 +8,6 @@
 
     <!-- FONT -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111498872-4"></script>
 
 
@@ -56,6 +55,7 @@
                 <a href="#contact">Contact</a>
             </div>
         </div>
+        <div class="mobile-menu-container"><span class="openbtn" onclick="openNav()">&#9776;</span><br></div>
 
         <!-- Top Menu -->
         <div id="navbar">
@@ -67,7 +67,6 @@
             <a class="topbar-menu-item" href="#highlights">Highlights</a>
             <a class="topbar-menu-item" href="#contact">Contact</a>
         </div>
-        <div class="mobile-menu-container"><span class="openbtn" onclick="openNav()">&#9776;</span><br></div>
 
         <!-- HERO -->
         <div id="hero">
@@ -86,7 +85,7 @@
             <button id="font-toggle" onclick="toggleExperience('toggle-font')" data-tippy-content="Change To Serif">Serif</button>
             <button id="menu-toggle" onclick="toggleExperience('toggle-menu')" data-tippy-content="Change To Mobile Menu">Mobile</button>
             <br>
-            This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me using jQuery
+            This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me using jQuery.
 
         </div>
 
@@ -158,7 +157,6 @@
             <div class="bottom-arrow"></div>
         </div>
 
-
         <!-- HIGHLIGHTS -->
         <div id="highlights">
             <h2>Highlights</h2>
@@ -171,56 +169,7 @@
                 <a data-filter="academic">Academic</a>
             </div>
             <hr>
-            <div class="cards">
-                <div class="card academic" data-type="academic">
-                    <h3>FAS Scholarship</h3>
-                </div>
-                <div class="card theater" data-type="theater">
-                    <h3>Aladdin in Aladdin</h3>
-                </div>
-                <div class="card bridge" data-type="bridge">
-                    <h3>Council Bluffs Regional Gold Rush 1st Place</h3>
-                </div>
-                <div class="card speech" data-type="speech">
-                    <h3>KSHAA State Champion in Poetry</h3>
-                </div>
-                <div class="card academic" data-type="academic">
-                    <h3>HYK Achievement Award</h3>
-                </div>
-                <div class="card bridge" data-type="bridge">
-                    <h3>Tulsa Regional Tournament 3rd Place</h3>
-                </div>
-                <div class="card theater" data-type="theater">
-                    <h3>Prince Charming in Cinderella</h3>
-                </div>
-                <div class="card academic" data-type="academic">
-                    <h3>JL Constant Scholarship</h3>
-                </div>
-                <div class="card speech" data-type="speech">
-                    <h3>NSDA National Semifinalist</h3>
-                </div>
-                <div class="card theater" data-type="theater">
-                    <h3>Sebastian in Twelvth Night</h3>
-                </div>
-                <div class="card speech" data-type="speech">
-                    <h3>KSHAA State Champion in Informative</h3>
-                </div>
-                <div class="card bridge" data-type="bridge">
-                    <h3>Blue Springs Tournament 1st Place</h3>
-                </div>
-                <div class="card academic" data-type="academic">
-                    <h3>Allen Engineering Scholarship</h3>
-                </div>
-                <div class="card bridge" data-type="bridge">
-                    <h3>President of the KU Bridge Club</h3>
-                </div>
-                <div class="card academic" data-type="academic">
-                    <h3>Chancellors Top Scholar</h3>
-                </div>
-                <div class="card academic" data-type="academic">
-                    <h3>McClendon Scholarship</h3>
-                </div>
-            </div>
+            <div class="cards"></div> <!-- Renders on load -->
         </div>
 
         <!-- STATS -->
@@ -287,6 +236,7 @@
             <a class="backtotop" href="#"><i class="fas fa-2x fa-chevron-up"></i></a>
         </div>
 
+        <!-- SCRIPTS -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js"></script>
         <script src="https://unpkg.com/tippy.js@4.3.5/umd/index.all.min.js"></script>
