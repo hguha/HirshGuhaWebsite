@@ -1,0 +1,100 @@
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #sidebar {
+      height: 100%;
+      width: 25%;
+      position: fixed;
+      z-index: 1;
+      background-color: gray;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    #content {
+      margin-left: 25%;
+      font-size: 20px;
+      padding: 3%;
+    }
+
+    .title {
+      font-size: 30px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .title:hover {
+      color: gray;
+    }
+
+    .post {
+      margin-bottom: 5%;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="welcome">Welcome to my Blog!</div>
+    <img src="images/hg-logo-white.png" width="100px"/>
+    <div class="menu">
+      <a href="/">Back To Home</a>
+      </div>
+  </div>
+
+  <div id="content">
+</div>
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+        let numBlogs = 0;
+
+        async function getNumBlogs() {
+          var counter = 1;
+          while(true) {
+                try {
+                    await $.get( "posts/post"+counter+".html", function() {counter++;});
+                } catch { return counter; }
+            }
+        }
+
+        function generateListing() {
+          $("#content").empty();
+
+          for(let i = 1; i <= numBlogs; i++ ) {
+            $.get("posts/post"+Number(i)+".html", function( data ) {
+              console.log(i);
+              let title = $(data).filter("#title").html();
+              let date = $(data).filter("#date").html();
+              let preview = $(data).filter("#body").html().slice(0,220);
+              $("#content").append(`
+              <div class="post">
+              <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
+              <div class="date">${date}</div>
+              <div class="preview">${preview}</div>
+            </div>`);
+
+          });
+          }
+        }
+
+        function loadBlog(num) {
+          $("#content").load(`posts/post${num}.html`, function() {
+          $("#content").prepend(`<button onclick="generateListing()">Back</button>`);
+          });
+        }
+
+        window.onload = function() {
+          getNumBlogs().then(function( data ) {
+            numBlogs = data - 1;
+            generateListing();
+          });
+        }
+
+    </script> 
+  
+</body>
+

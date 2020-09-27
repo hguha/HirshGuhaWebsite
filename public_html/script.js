@@ -1,6 +1,5 @@
 //Google Analytics
 window.dataLayer = window.dataLayer || [];
-
 function gtag() {
     dataLayer.push(arguments);
 }
@@ -17,13 +16,14 @@ function initTippy() {
     });
 }
 
+
 //THEME
 let root = document.documentElement;
 let themeColor = "#114499";
-var darkModeOn = (localStorage.getItem("dark")) == "true" ? true: false;
-console.log(darkModeOn);
+var darkModeOn = false;
 var serifFont = false;
 var usingMobileMenu = false;
+
 function toggleExperience(element) {
     switch(element) {
         case "toggle-theme":
@@ -34,7 +34,6 @@ function toggleExperience(element) {
             instance[0].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
             $("[id$='-toggle']").css({"background-color": darkModeOn ? "white" : "black", "color": darkModeOn ? "black" : "white"});
             $("#theme-toggle").html(darkModeOn ? "Light" : "Dark");
-            localStorage.setItem("dark", darkModeOn);
             break;
         case "toggle-font":
             root.style.setProperty("--font", serifFont ? "'Open Sans', 'Roboto', sans-serif" : "serif");
@@ -99,6 +98,15 @@ $(document).ready(function() {
         $(".text-" + id).show();
         prevId = id;
     });
+
+    //check theme
+    darkModeOn = (localStorage.getItem("dark")) == "true" ? true: false;
+    if(darkModeOn) {
+        toggleTheme();
+        root.style.setProperty("--text-color", darkModeOn ? "#3c3c3c" : "#fff");
+        root.style.setProperty("--background-color", darkModeOn ? "#fff" : "#3c3c3c");
+        root.style.setProperty("--theme-color", themeColor = darkModeOn ? "#114499" :  "#00ccff");
+    }
 });
 
 //TYPEWRITER
@@ -107,6 +115,7 @@ var firstName = 'HIRSH ';
 var lastName = 'GUHA';
 var speed = 50;
 window.onload = function() {
+    
     if (window.innerWidth > 768) {
         typeWriter();
         setTimeout(showSocialMedia, 1100);
@@ -115,6 +124,7 @@ window.onload = function() {
         document.getElementById("last-name").innerHTML += "GUHA ";
         showSocialMedia();
     }
+    getNewestBlog();
 }
 
 var socialMedia = document.getElementsByClassName('social-media');
@@ -324,3 +334,19 @@ $filters.on('click', function(e) {
         });
     }
 });
+
+//BLOG
+//create home screen showing newest blog
+async function getNewestBlog() {
+    var counter = 1;
+    while(true) {
+        try {
+            await $.get( "posts/post"+counter+".html", function() {counter++;});
+        } catch { break; }
+    }
+    $.get("posts/post"+Number(counter-1)+".html", function( data ) {
+        document.getElementById("title").innerHTML = $(data).filter("#title").html();
+        document.getElementById("date").innerHTML = $(data).filter("#date").html();
+        document.getElementById("preview").innerHTML = $(data).filter("#body").html().slice(0,220);
+    });
+}
