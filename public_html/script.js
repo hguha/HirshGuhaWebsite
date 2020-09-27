@@ -260,7 +260,6 @@ var menuitems = [
     {loc: "#blog", name: "Blog"},
     {loc: "#contact", name: "Contact"},
 ]
-console.log(menuitems);
 
 function changeOpacity() {
     if (window.pageYOffset > sticky) {
@@ -276,16 +275,12 @@ function getMenus() {
         mobile_html+= `<a href="${menuitems[i].loc}">${menuitems[i].name}</a>`;
         topbar_html+= `<a class="topbar-menu-item" href="${menuitems[i].loc}">${menuitems[i].name}</a>`;
     }
-    console.log(topbar_html);
-    let html = `
-    <div id="mobileNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">${mobile_html}</div>
-    </div>
-    <div class="mobile-menu-container"><span class="openbtn" onclick="openNav()">&#9776;</span><br></div>
-
-    <div id="navbar">${topbar_html}</div>
-    `
+    let html = `<div id="mobileNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">${mobile_html}</div>
+                </div>
+                <div class="mobile-menu-container"><span class="openbtn" onclick="openNav()">&#9776;</span><br></div>
+                <div id="navbar">${topbar_html}</div>`
     $(".content").prepend(html);
     navbar = document.getElementById("navbar");
     sticky = navbar.offsetTop + 10;
@@ -368,6 +363,8 @@ $filters.on('click', function(e) {
 
 //BLOG
 //create home screen showing newest blog
+
+let title, date, body;
 async function getNewestBlog() {
     var counter = 1;
     while(true) {
@@ -376,8 +373,21 @@ async function getNewestBlog() {
         } catch { break; }
     }
     $.get("posts/post"+Number(counter-1)+".html", function( data ) {
-        document.getElementById("title").innerHTML = $(data).filter("#title").html();
-        document.getElementById("date").innerHTML = $(data).filter("#date").html();
-        document.getElementById("preview").innerHTML = $(data).filter("#body").html().slice(0,220);
+        title = $(data).filter("#title").html();
+        date = $(data).filter("#date").html();
+        body = $(data).filter("#body").html();
+        document.getElementById("title").innerHTML = title;
+        document.getElementById("date").innerHTML = date;
+        document.getElementById("preview").innerHTML = body.slice(0,220);
+    });
+}
+
+function openBlog() {
+    Swal.fire({
+      title: title,
+      html: date+"<br><br>"+"<div style='text-align:left'>"+body+"</div>",
+      showConfirmButton: false,
+      width: "90%",
+      showCloseButton: true,
     });
 }
