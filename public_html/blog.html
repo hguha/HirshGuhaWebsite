@@ -2,6 +2,7 @@
   <style>
     body {
       margin: 0;
+      font-family: "Open Sans", "Roboto", sans-serif;
     }
 
     #sidebar {
@@ -16,7 +17,6 @@
 
     #content {
       margin-left: 25%;
-      font-size: 20px;
       padding: 3%;
     }
 
@@ -28,6 +28,15 @@
 
     .title:hover {
       color: gray;
+    }
+
+    .date {
+      text-transform: uppercase;
+      color: gray;
+    }
+
+    .preview {
+      color: lightgray;
     }
 
     .post {
@@ -74,7 +83,8 @@
               <div class="post">
               <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
               <div class="date">${date}</div>
-              <div class="preview">${preview}</div>
+              <div class="preview">${preview}...</div>
+              <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
             </div>`);
 
           });
