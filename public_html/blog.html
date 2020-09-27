@@ -1,110 +1,63 @@
-<head>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Open Sans", "Roboto", sans-serif;
-    }
-
-    #sidebar {
-      height: 100%;
-      width: 25%;
-      position: fixed;
-      z-index: 1;
-      background-color: gray;
-      overflow-x: hidden;
-      padding-top: 20px;
-    }
-
-    #content {
-      margin-left: 25%;
-      padding: 3%;
-    }
-
-    .title {
-      font-size: 30px;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .title:hover {
-      color: gray;
-    }
-
-    .date {
-      text-transform: uppercase;
-      color: gray;
-    }
-
-    .preview {
-      color: lightgray;
-    }
-
-    .post {
-      margin-bottom: 5%;
-    }
-
-  </style>
-</head>
+<head><link rel="stylesheet" href="css/blog.css"></head>
 <body>
   <div id="sidebar">
-    <div class="welcome">Welcome to my Blog!</div>
-    <img src="images/hg-logo-white.png" width="100px"/>
+    <img src="images/hg-logo-white.png" class="logo">
+    <div class="welcome">HIRSH'S BLOG</div>
     <div class="menu">
-      <a href="/">Back To Home</a>
-      </div>
+      <a style="padding-top:20px" href="/">Back To Home</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#about">About</a>
+    </div>
   </div>
-
-  <div id="content">
-</div>
+  <div id="content"></div>
   
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
-        let numBlogs = 0;
+    let numBlogs = 0;
 
-        async function getNumBlogs() {
-          var counter = 1;
-          while(true) {
-                try {
-                    await $.get( "posts/post"+counter+".html", function() {counter++;});
-                } catch { return counter; }
-            }
+    async function getNumBlogs() {
+      var counter = 1;
+      while(true) {
+            try {
+                await $.get( "posts/post"+counter+".html", function() {counter++;});
+            } catch { return counter; }
         }
+    }
 
-        function generateListing() {
-          $("#content").empty();
+    function generateListing() {
+      $("#content").empty();
 
-          for(let i = 1; i <= numBlogs; i++ ) {
-            $.get("posts/post"+Number(i)+".html", function( data ) {
-              console.log(i);
-              let title = $(data).filter("#title").html();
-              let date = $(data).filter("#date").html();
-              let preview = $(data).filter("#body").html().slice(0,220);
-              $("#content").append(`
-              <div class="post">
-              <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
-              <div class="date">${date}</div>
-              <div class="preview">${preview}...</div>
-              <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
-            </div>`);
+      for(let i = numBlogs; i > 0; i-- ) {
+        $.get("posts/post"+Number(i)+".html", function( data ) {
+          let title = $(data).filter("#title").html();
+          let date = $(data).filter("#date").html();
+          let preview = $(data).filter("#body").html().slice(0,220);
+          $("#content").append(`
+          <div class="post">
+          <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
+          <div class="date">${date}</div>
+          <div class="preview">${preview}...</div>
+          <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
+        </div>`);
 
-          });
-          }
-        }
+      });
+      }
+    }
 
-        function loadBlog(num) {
-          $("#content").load(`posts/post${num}.html`, function() {
-          $("#content").prepend(`<button onclick="generateListing()">Back</button>`);
-          });
-        }
+    function loadBlog(num) {
+      $("#content").load(`posts/post${num}.html`, function() {
+      $("#content").prepend(`<button class="back" onclick="generateListing()">&#8592; Back to Listing</button>`);
+      });
+    }
 
-        window.onload = function() {
-          getNumBlogs().then(function( data ) {
-            numBlogs = data - 1;
-            generateListing();
-          });
-        }
+    window.onload = function() {
+      getNumBlogs().then(function( data ) {
+        numBlogs = data - 1;
+        generateListing();
+      });
+    }
 
-    </script> 
+  </script> 
   
 </body>
 
