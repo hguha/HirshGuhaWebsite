@@ -42,8 +42,8 @@ function toggleExperience(element) {
             $("#font-toggle").html(serifFont ? "Serif" : "Sans");
             break;
         case "toggle-menu":
-            var curMenu = usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item, .noncode") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
-            var hiddenMenu = !usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item, .noncode") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
+            var curMenu = usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
+            var hiddenMenu = !usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
             curMenu.css("display", "block");
             hiddenMenu.css("display", "none");
             usingMobileMenu = !usingMobileMenu;
@@ -124,6 +124,7 @@ window.onload = function() {
         document.getElementById("last-name").innerHTML += "GUHA ";
         showSocialMedia();
     }
+    getMenus();
     getNewestBlog();
 }
 
@@ -249,8 +250,17 @@ function countUp() {
 }
 
 //MENU
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop + 10;
+var navbar, sticky;
+var menuitems = [
+    {loc: "#hero", name: "Home"},
+    {loc: "#projects", name: "Projects"},
+    {loc: "#about", name: "About"},
+    {loc: "interests", name: "Interests"},
+    {loc: "#highlights", name: "Highlights"},
+    {loc: "#blog", name: "Blog"},
+    {loc: "#contact", name: "Contact"},
+]
+console.log(menuitems);
 
 function changeOpacity() {
     if (window.pageYOffset > sticky) {
@@ -258,6 +268,27 @@ function changeOpacity() {
     } else {
         navbar.style.background = "rgba(0,0,0,0)";
     }
+}
+
+function getMenus() {
+    let mobile_html = '', topbar_html = '<img class="navbar-logo" href="#" src="images/hg-logo-white.png" alt="Logo"></img>';
+    for(let i = 0; i < menuitems.length; i++) {
+        mobile_html+= `<a href="${menuitems[i].loc}">${menuitems[i].name}</a>`;
+        topbar_html+= `<a class="topbar-menu-item" href="${menuitems[i].loc}">${menuitems[i].name}</a>`;
+    }
+    console.log(topbar_html);
+    let html = `
+    <div id="mobileNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">${mobile_html}</div>
+    </div>
+    <div class="mobile-menu-container"><span class="openbtn" onclick="openNav()">&#9776;</span><br></div>
+
+    <div id="navbar">${topbar_html}</div>
+    `
+    $(".content").prepend(html);
+    navbar = document.getElementById("navbar");
+    sticky = navbar.offsetTop + 10;
 }
 
 function openNav() {
