@@ -1,7 +1,7 @@
 <head><link rel="stylesheet" href="css/blog.css"></head>
 <body>
   <div id="sidebar">
-    <img src="images/hg-logo-white.png" class="logo">
+    <img src="images/hg-white.svg" class="logo">
     <div class="welcome">HIRSH'S BLOG</div>
     <div class="menu">
       <a style="padding-top:20px" href="/">Back To Home</a>
@@ -34,10 +34,10 @@
           let preview = $(data).filter("#body").html().slice(0,220);
           $("#content").append(`
           <div class="post">
-          <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
-          <div class="date">${date}</div>
-          <div class="preview">${preview}...</div>
-          <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
+            <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
+            <div class="date">${date}</div>
+            <div class="preview">${preview}...</div>
+            <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
         </div>`);
 
       });

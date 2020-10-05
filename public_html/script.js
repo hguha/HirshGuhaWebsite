@@ -270,7 +270,7 @@ function changeOpacity() {
 }
 
 function getMenus() {
-    let mobile_html = '', topbar_html = '<img class="navbar-logo" href="#" src="images/hg-logo-white.png" alt="Logo"></img>';
+    let mobile_html = '', topbar_html = '<img class="navbar-logo" href="#" src="images/hg-white.svg" alt="Logo"></img>';
     for(let i = 0; i < menuitems.length; i++) {
         mobile_html+= `<a href="${menuitems[i].loc}">${menuitems[i].name}</a>`;
         topbar_html+= `<a class="topbar-menu-item" href="${menuitems[i].loc}">${menuitems[i].name}</a>`;
