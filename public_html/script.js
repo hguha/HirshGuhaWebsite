@@ -257,7 +257,7 @@ var menuitems = [
     {loc: "#about", name: "About"},
     {loc: "interests", name: "Interests"},
     {loc: "#highlights", name: "Highlights"},
-    {loc: "#blog", name: "Blog"},
+    {loc: "/blog", name: "Blog"},
     {loc: "#contact", name: "Contact"},
 ]
 
