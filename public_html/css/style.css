@@ -447,7 +447,6 @@ button{
 button:hover{
     background:var(--background-color);
     color: var(--theme-color);
-    border-color: var(--theme-color);
 }
 
 #theme-toggle {
