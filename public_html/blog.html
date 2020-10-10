@@ -61,12 +61,13 @@
           let title = $(data).filter("#title").html();
           let date = $(data).filter("#date").html();
           let tag = $(data).filter("#tag").html();
-          let preview = $(data).filter("#body").html().slice(0,220);
+          let preview = $(data).filter("#body").html();
+          if(preview.includes("img")) preview = preview.substr(preview.indexOf("<br>")+4);
           $("#content").append(`
           <div class="post" data-type="${tag}">
             <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
             <div class="date">${date}</div>
-            <div class="preview">${preview}...</div>
+            <div class="preview">${preview.slice(0,220)}...</div>
             <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
         </div>`);
       });

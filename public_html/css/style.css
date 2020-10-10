@@ -40,14 +40,42 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+#about h3 {
     font-size: 35px;
 }
 
-h4 {
-    font-size: 35px;
-    color: var(--theme-color);
+h3 {
+    font-size: 1.17em;
 }
+
+li {
+    padding-bottom: 10px;
+}
+
+.toggles {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100000001 !important;
+}
+
+.toggles button {
+    font-size: 15px !important;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: 0.4s;
+    background: black;
+}
+
+#exp-toggle {
+    z-index: 2 !important;
+}
+.up { transform: translatey(-60px);}
+.left {transform: translatex(-60px);}
+.diag {transform: translatex(-60px) translatey(-60px);}
 
 #hero {
     color: #fff;
@@ -155,15 +183,12 @@ h4 {
     padding: 15px;
 }
 
-#toggle {
-    padding: 3%;
+#what-im-up-to {
+    padding: 5%;
     text-align: center;
     background: var(--background-color);
     color: var(--text-color);
-}
-
-#toggle button{
-    margin: 0.5%;
+    font-size: 20px;
 }
 
 #about .row {
@@ -284,9 +309,9 @@ h4 {
     color: gray;
 }
 
-#blog img {
+#blog img, .swal2-popup img {
     box-shadow: 1px 3px 4px rgba(0,0,0,0.5), 0 3px 6px rgba(0,0,0,0.5);
-    width: 50%;
+    max-width: 300px;
 }
 
 #blog #date {
@@ -447,24 +472,6 @@ button{
 button:hover{
     background:var(--background-color);
     color: var(--theme-color);
-}
-
-#theme-toggle {
-    background: black;
-    color: #fff;
-    font-size: 20px;
-}
-
-#font-toggle {
-    background: black;
-    color: #fff;
-    font-size: 20px;
-}
-
-#menu-toggle {
-    background: black;
-    color: #fff;
-    font-size: 16px;
 }
 
 .disabled {

@@ -11,6 +11,10 @@ body {
     background: var(--background-color);
 }
 
+li {
+    padding-bottom: 10px;
+}
+
 #sidebar {
     height: 100%;
     width: 25vw;
@@ -100,6 +104,10 @@ button {
     transition: 0.4s;
 }
 
+img {
+    max-width: 20em;
+}
+
 button:hover {
     background:  var(--background-color);
     border: 1px solid var(--text-color);
@@ -160,5 +168,9 @@ button:hover {
     #filter {
         display: inline;
         word-spacing: 15px;
+    }
+
+    img {
+        max-width: 15em;
     }
 }

@@ -16,6 +16,13 @@ function initTippy() {
     });
 }
 
+//WORKING ON
+// let ig = 0;
+// setInterval(() => {
+//     $(".workingon").fadeOut.html(ig);
+//     ig++;
+// }, 5000);
+
 
 //THEME
 let root = document.documentElement;
@@ -24,6 +31,13 @@ var darkModeOn = false;
 var serifFont = false;
 var usingMobileMenu = false;
 
+function toggleExpMenu() {
+    console.log("test");
+    $("#font-toggle").toggleClass("left");
+    $("#theme-toggle").toggleClass("up");
+    $("#menu-toggle").toggleClass("diag");
+}
+
 function toggleExperience(element) {
     switch(element) {
         case "toggle-theme":
@@ -31,15 +45,13 @@ function toggleExperience(element) {
             root.style.setProperty("--background-color", darkModeOn ? "#fff" : "#3c3c3c");
             root.style.setProperty("--theme-color", themeColor = darkModeOn ? "#114499" :  "#00ccff");
             darkModeOn = !darkModeOn;
-            instance[0].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
+            instance[1].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
             $("[id$='-toggle']").css({"background-color": darkModeOn ? "white" : "black", "color": darkModeOn ? "black" : "white"});
-            $("#theme-toggle").html(darkModeOn ? "Light" : "Dark");
             break;
         case "toggle-font":
             root.style.setProperty("--font", serifFont ? "'Open Sans', 'Roboto', sans-serif" : "serif");
             serifFont = !serifFont;
-            instance[1].setContent(serifFont ? "Change to Sans-Serif Mode" : "Change To Serif");
-            $("#font-toggle").html(serifFont ? "Serif" : "Sans");
+            instance[2].setContent(serifFont ? "Change to Sans-Serif Mode" : "Change To Serif");
             break;
         case "toggle-menu":
             var curMenu = usingMobileMenu ? $("#navbar, .navbar-logo, .header, .top-menu-item") : $(".openbtn, .closebtn, .overlay-content, .mobile-menu-container");
@@ -47,8 +59,7 @@ function toggleExperience(element) {
             curMenu.css("display", "block");
             hiddenMenu.css("display", "none");
             usingMobileMenu = !usingMobileMenu;
-            instance[2].setContent(usingMobileMenu ? "Change to Top Menu" : "Change To Mobile Menu");
-            $("#menu-toggle").html(usingMobileMenu ? "Top" : "Mobile");
+            instance[3].setContent(usingMobileMenu ? "Change to Top Menu" : "Change To Mobile Menu");
             break;
     }
 
@@ -262,10 +273,12 @@ var menuitems = [
 ]
 
 function changeOpacity() {
-    if (window.pageYOffset > sticky) {
-        navbar.style.background = "rgba(0,0,0,0.8)";
-    } else {
-        navbar.style.background = "rgba(0,0,0,0)";
+    if(navbar) {
+        if (window.pageYOffset > sticky) {
+            navbar.style.background = "rgba(0,0,0,0.8)";
+        } else {
+            navbar.style.background = "rgba(0,0,0,0)";
+        }
     }
 }
 
@@ -370,15 +383,18 @@ async function getNewestBlog() {
     while(true) {
         try {
             await $.get( "posts/post"+counter+".html", function() {counter++;});
-        } catch { break; }
+        } catch(ex) { break; }
     }
     $.get("posts/post"+Number(counter-1)+".html", function( data ) {
         title = $(data).filter("#title").html();
         date = $(data).filter("#date").html();
         body = $(data).filter("#body").html();
+        //prevent images from showing in preview
+        let preview = body;
+        if(body.includes("img")) preview = body.substr(body.indexOf("<br>")+4);
         document.getElementById("title").innerHTML = title;
         document.getElementById("date").innerHTML = date;
-        document.getElementById("preview").innerHTML = body.slice(0,220);
+        document.getElementById("preview").innerHTML = preview.slice(0,220);
     });
 }
 

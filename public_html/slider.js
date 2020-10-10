@@ -42,7 +42,8 @@ var projects = [
       },
     ],
     buttons: [
-      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/ElectWise" }
+      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/ElectWise" },
+      { icon: "fas fa-video", tooltip: "Watch Video", link: "https://drive.google.com/file/d/1WXP0GW0XqjLnMVXq24OGaUmHD7rSwkMQ/view?usp=sharing" }
     ],
   },
   {

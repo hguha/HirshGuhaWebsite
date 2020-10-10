@@ -41,7 +41,13 @@
 
 
     -->
-
+    <div class="toggles">
+        <button id="exp-toggle" onclick="toggleExpMenu()" data-tippy-content="Change Your Experience"><i class="fas fa-ellipsis-h"></i></button>
+        <button id="theme-toggle" onclick="toggleExperience('toggle-theme')" data-tippy-content="Change To Dark Mode"><i class="fas fa-lightbulb"></i></button>
+        <button id="font-toggle" onclick="toggleExperience('toggle-font')" data-tippy-placement="left" data-tippy-content="Change To Serif"><i class="fas fa-font"></i></button>
+        <button id="menu-toggle" onclick="toggleExperience('toggle-menu')" data-tippy-content="Change To Mobile Menu"><i class="fas fa-bars"></i></button>
+        <br>
+    </div>
     <div class="content">
         <!-- HERO -->
         <div id="hero">
@@ -55,13 +61,13 @@
             </div>
         </div>
 
-        <div id="toggle">
-            <h3>Choose your experience:</h3>
-            <button id="theme-toggle" onclick="toggleExperience('toggle-theme')" data-tippy-content="Change To Dark Mode">Dark</button>
-            <button id="font-toggle" onclick="toggleExperience('toggle-font')" data-tippy-content="Change To Serif">Serif</button>
-            <button id="menu-toggle" onclick="toggleExperience('toggle-menu')" data-tippy-content="Change To Mobile Menu">Mobile</button>
-            <br>
-            This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me using jQuery.
+        <div id="what-im-up-to">
+            I'm a Computer Science Ph.D. Student at Princeton University involved with election security policy at the Center for Information Technology Policy on campus. I also work at Alarm.com, coding better interfaces for the customer site.
+            I gradutated from Kansas University with a B.S. in Computer Science in two years(something like 29 credits a semester), and absolutely love to spend my free time coding, researching, and cooking.
+            <br><br>
+            <b>What I'm working on: </b><span class="workingon">Self-contained client side blogging platform</span>
+            <br><br><br>
+            <em>This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me using jQuery.</em>
 
         </div>
 
@@ -95,9 +101,9 @@
                 </div>
                 <div class="col-md d-flex">
                     <div class="card flex-fill about">
-                        <h2 style="color:white">About</h2>
+                        <h2 style="color:white">Who I Am</h2>
                         <p style="padding: 3%">
-                            I am an engineer, a singer, dancer, actor, writer, designer, and cook with a serious passion for UI design and data analytics. That, of course, is the long way of saying that I am a creator. I have a background in speech, debate, theater, math, and of course, computer science, and what I’ve found is that all these fields are not so different - they allow me to imagine a world that doesn’t exist, and make it a reality, and that motivation is what defines my aspirations, dreams, and goals.
+                            I am an engineer, a researcher, singer, actor, writer, designer, and cook with a serious passion for UI design, data analytics, and policy change. That, of course, is the long way of saying that I like to think of myself as a creator. I have a background in speech, debate, theater, math, and of course, computer science, and what I’ve found is that all these fields are not so different - they allow me to imagine a world that doesn’t exist, and make it a reality.
                         </p>
                     </div>
                 </div>
@@ -225,7 +231,6 @@
             <a href="https://www.facebook.com/hirsh.guha/" target="_blank"><i class="fab fa-2x fa-facebook-square"></i></a>
             <a href="https://github.com/hguha" target="_blank"><i class="fab fa-2x fa-github-square"></i></a>
             <a href="www.linkedin.com/in/hirsh-guha-40b247191" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a>
-            <a class="backtotop" href="#"><i class="fas fa-2x fa-chevron-up"></i></a>
         </div>
 
         <!-- SCRIPTS -->
