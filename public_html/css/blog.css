@@ -37,13 +37,18 @@ p {
     padding: 2%;
 }
 
-.title {
+#preview-title {
     font-size: 30px;
     cursor: pointer;
     transition: .2s;
 }
 
-.title:hover {
+#preview-title a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#preview-title a:hover {
     color: gray;
 }
 
@@ -51,12 +56,12 @@ p {
     display: none;
 }
 
-.date {
+#preview-date {
     text-transform: uppercase;
     color: gray;
 }
 
-.preview {
+#preview {
     color: lightgray;
 }
 
@@ -95,20 +100,22 @@ padding-top: 20px;
     line-height: 1.5;
 }
 
-button {
+button, .back {
     background: var(--text-color);
     border: 1px solid #3c3c3c;
     cursor: pointer;
     color: var(--background-color);
     padding: 10px;
     transition: 0.4s;
+    text-decoration: none;
 }
+
 
 img {
     max-width: 20em;
 }
 
-button:hover {
+button:hover, .back:hover {
     background:  var(--background-color);
     border: 1px solid var(--text-color);
     color: var(--text-color)

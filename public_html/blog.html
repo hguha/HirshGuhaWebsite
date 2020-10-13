@@ -75,9 +75,9 @@
           if(preview.includes("img")) preview = preview.substr(preview.indexOf("<br>")+4);
           $("#content").append(`
           <div class="post" data-type="${blogs[i].tag}">
-            <div class="title"><a onclick="loadBlog(${i})">${blogs[i].title}</a></div>
-            <div class="date">${blogs[i].date}</div>
-            <div class="preview">${preview.slice(0,220)}...</div>
+            <div id="preview-title"><a href="#${Number(i+1)+"-"+blogs[i].title.toLowerCase().replaceAll(" ", "-")}" onclick="loadBlog(${i+1})">${blogs[i].title}</a></div>
+            <div id="preview-date">${blogs[i].date}</div>
+            <div id="preview">${preview.slice(0,220)}...</div>
             <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
         </div>`);
       }
@@ -99,7 +99,7 @@
 
     function loadBlog(num) {
       $("#content").load(`posts/post${num}.html`, function() {
-      $("#content").prepend(`<button class="back" onclick="generateListing()">&#8592; Back to Listing</button>`);
+      $("#content").prepend(`<a class="back" href="#" onclick="generateListing()">&#8592; Back to Listing</a>`);
       });
     }
 
@@ -109,11 +109,10 @@
         getBlogs().then(function(data) {
             blogs = data;
             if(window.location.hash) {
-              console.log("Go to blog!")
+              let num = window.location.hash[1];
+              loadBlog(num);
             }
-            else {
-              generateListing();
-            }
+            else { generateListing(); }
           });
       });
     }
