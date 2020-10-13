@@ -43,7 +43,7 @@
 
 
     let numBlogs = 0;
-
+    let blogs;
     async function getNumBlogs() {
       var counter = 1;
       while(true) {
@@ -54,45 +54,46 @@
             } catch(ex) { return counter; }
         }
     }
-    function generateListing() {
-      $("#content").empty();
-      for(let i = numBlogs; i > 0; i-- ) {
-        $.get("posts/post"+Number(i)+".html", function( data ) {
+    async function getBlogs() {
+      let blogs = [];
+      for(let i = 0; i < numBlogs; i++ ) {
+        await $.get("posts/post"+Number(i+1)+".html", function( data ) {
           let title = $(data).filter("#title").html();
           let date = $(data).filter("#date").html();
           let tag = $(data).filter("#tag").html();
           let preview = $(data).filter("#body").html();
+          blogs.push({title:title, date:date, tag:tag, body:preview});
+        });
+      }
+      return blogs;
+    }
+
+    function generateListing() {
+      $("#content").empty();
+      for(let i = numBlogs-1; i >= 0; i-- ) {
+          let preview = blogs[i].body;
           if(preview.includes("img")) preview = preview.substr(preview.indexOf("<br>")+4);
           $("#content").append(`
-          <div class="post" data-type="${tag}">
-            <div class="title"><a onclick="loadBlog(${i})">${title}</a></div>
-            <div class="date">${date}</div>
+          <div class="post" data-type="${blogs[i].tag}">
+            <div class="title"><a onclick="loadBlog(${i})">${blogs[i].title}</a></div>
+            <div class="date">${blogs[i].date}</div>
             <div class="preview">${preview.slice(0,220)}...</div>
             <hr style="margin-top:5%; height:1px; background-color:lightgray; border:none">
         </div>`);
-      });
       }
 
       $filters = $('#filter [data-filter]');
-              console.log($filters);
-              $filters.on('click', function(e) {
-                console.log($filters);
-                console.log("dsa");
-                var $cards = $('#content [data-type]');
-                e.preventDefault();
-                $filters.removeClass('active');
-                $(this).addClass('active');
+        $filters.on('click', function(e) {
+          var $cards = $('#content [data-type]');
+          e.preventDefault();
+          $filters.removeClass('active');
+          $(this).addClass('active');
 
-                var $filterType = $(this).attr('data-filter');
+          var $filterType = $(this).attr('data-filter');
 
-                if ($filterType == 'all') {
-                    $cards.fadeOut(200).promise().done(function() {$cards.fadeIn(200);});
-                } else {
-                    $cards.fadeOut(200).promise().done(function() {
-                        $cards.filter('[data-type = "' + $filterType + '"]').fadeIn(200);
-                    });
-                }
-            });
+          if ($filterType == 'all') $cards.fadeOut(200).promise().done(function() {$cards.fadeIn(200);});
+          else $cards.fadeOut(200).promise().done(function() {$cards.filter('[data-type = "' + $filterType + '"]').fadeIn(200);});
+      });
 
     }
 
@@ -105,7 +106,15 @@
     window.onload = function() {
       getNumBlogs().then(function( data ) {
         numBlogs = data - 1;
-        generateListing();
+        getBlogs().then(function(data) {
+            blogs = data;
+            if(window.location.hash) {
+              console.log("Go to blog!")
+            }
+            else {
+              generateListing();
+            }
+          });
       });
     }
 
