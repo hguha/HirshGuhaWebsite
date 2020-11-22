@@ -168,33 +168,6 @@ $(document).ready(function(){
                     </div>`
     return card;
   }
-  
-  function getProjectDOM(p) {
-    var card = `<div class="card">
-                <h3>${p.title}</h3>
-                <div class="languages">${p.languages.join(" • ").toUpperCase()}</div>
-                <div class="description">A website entirely coded towards me in order to demonstrate my abilities in web design and dynamic websites</div>
-                <hr>
-                <div class="row"><div class="col-md-6 col-sm-12">`
-    for (const f of p.features) {
-      console.log(f);
-      card+= `<div class="feature">
-                <span class="fa-stack fa-2x">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-${f.icon} fa-stack-1x"></i>
-                </span>
-                <span class="text">${f.caption}<span>
-            </div>`
-    }
-    card += `</div><div class="col-md-6 col-sm-12">
-              <img src="images/${p.image}" width="90%">
-          </div></div><br><hr>`
-    for (const b of p.buttons) {
-      card+= `<button onclick="window.open('${b.link}','_blank');" data-tippy-content="${b.tooltip}"><i class="${b.icon}"></i></button>`
-    }
-    card+="</div>";
-    return card;
-  }
 
   function getProjectDOM(p) {
     var card = `<div class="card">

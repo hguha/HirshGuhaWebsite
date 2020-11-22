@@ -95,61 +95,6 @@ li {
      -webkit-text-stroke: 1px var(--background-color);;
 }
 
-.navbar-logo {
-    width:55px;
-    position: absolute;
-    left: 20;
-    top:5;
-    transition: 1s;
-    cursor: pointer;
-  }
-  
-  .navbar-logo:hover {
-      transform: scale(1.2) rotate3d(0,1,0, 180deg);
-  }
-  
-  #navbar {
-    padding: 20px;
-    text-align:right;
-    color: #fff;
-    position: absolute;
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  .topbar-menu-item {
-    padding: 0 1%;
-    cursor: pointer;
-    color: white;
-    text-transform: uppercase;
-    font-weight:100;
-    display: inline-block;
-    transition: 0.3s;
-  }
-  
-  .topbar-menu-item:after {
-      content:'';
-      background: #fff;
-      height: 2px;
-      width: 0;
-      display: block;
-      transition: 0.3s;
-      margin: 0 auto;
-  }
-  
-  .topbar-menu-item:hover:after {
-      width: 100%;
-      background: var(--theme-color);
-  }
-  
-  .topbar-menu-item:hover {
-    color: var(--theme-color);
-    text-decoration: none;
-    transform: translateY(4px);
-  }
-
 .social-media {
     position: relative;
     top:-130px;
@@ -408,19 +353,6 @@ li {
     content:'\f19d';
 }
 
-.is-animated {
-  animation: .6s zoom-in;
-}
-
-@keyframes zoom-in {
-  0% {
-   transform: scale(.1);
-  }
-  100% {
-    transform: none;
-  }
-}
-
 #stats {
     background: var(--background-color);
     color: var(--text-color);
@@ -478,73 +410,6 @@ button:hover{
     opacity: 0.5;
 }
 
-/* BOTTOM */
-#contact {
-    background:
-        linear-gradient(to left, rgba(20,0,30, 0.8), rgba(180,0,255, 0.8)),
-        url("../images/hero.jpg");
-    padding: 5% 10%;
-    color: white;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    text-align: left;
-}
-
-#contact input, textarea {
-    color: white;
-    background: transparent;
-    border: 2px solid white;
-    margin-bottom: 18px;
-    margin-top: 5px;
-    padding:10px;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s;
-    transform: translateX(-50px);
-}
-
-#contact textarea {
-     height: 200px;
-     transform: translateX(50px);
-}
-
-::placeholder {
-    color: rgba(255,255,255,0.6);
-}
-
-#footer {
-  padding: 20px;
-  color: #fff;
-  background: #3c3c3c;
-  width: 100%;
-  display: inline-block;
-}
-
-#footer a{
-  display:inline-block;
-  text-align: right;
-  padding: 0;
-  color: #fff;
-  transition:0.2s;
-  letter-spacing: 10px;
-  font-size: 15px;
-}
-
-#footer a:hover {
-    color: var(--theme-color);
-    transform: scale(1.2) translateY(-3px);
-}
-
-#footer .backtotop {
-    font-size: 30px;
-    position: absolute;
-    margin-top: -30px;
-    right: 20px;
-    color: var(--theme-color);
-}
-
 #blog-content {
     padding: 5%;
     line-height: 150%;
@@ -585,7 +450,6 @@ button:hover{
     right: 10px;
     font-size: 2em;
 }
-
 
 .swal-modal {
     width:95% !important;

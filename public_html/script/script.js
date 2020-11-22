@@ -6,6 +6,8 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-111498872-4');
 
+
+//TOOLTIPS
 let instance = null;
 function initTippy() {
     instance = tippy('button', {
@@ -16,14 +18,6 @@ function initTippy() {
     });
 }
 
-//WORKING ON
-// let ig = 0;
-// setInterval(() => {
-//     $(".workingon").fadeOut.html(ig);
-//     ig++;
-// }, 5000);
-
-
 //THEME
 let root = document.documentElement;
 let themeColor = "#114499";
@@ -32,7 +26,6 @@ var serifFont = false;
 var usingMobileMenu = false;
 
 function toggleExpMenu() {
-    console.log("test");
     $("#font-toggle").toggleClass("left");
     $("#theme-toggle").toggleClass("up");
     $("#menu-toggle").toggleClass("diag");
@@ -66,7 +59,6 @@ function toggleExperience(element) {
 }
 
 //SKILLS
-
 function inView(id) {
     const bounding = document.getElementById(id).getBoundingClientRect();
     const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
@@ -84,26 +76,42 @@ function animateBars() {
 
 //INTERESTS
 var toggles = document.getElementsByClassName("toggle");
-var content = [
-    "Growing up and playing table tennis with my dad after work was one of my favorite pastimes, and remains so to this day, with the only real difference between the power, spin, and control at which we play. In fact, the same is true of many of the racquet sports I play, including racquetball, badminton, and tennis. However, table tennis was the game that I had the most passion for and grew the best at.",
-    "As a member of my Indian community, I set up pujas, organize festivals, serve food at picnics and clean up. This is something I’ve done for as long as I can remember, and gives me an incredible sense of family. As a tutor; since high school, I’ve tutored students in English, Physics, Calculus, Pre-Calculus, Linear Algebra, and Computer Science. As a college student, I give tours to prospective students for the Honors Program as an Ambassador and organize various outreach programs on behalf of my school.",
-    "I’m a firm believer that contract bridge is not a game of luck. As far as card games go, it’s one where only skill can win tournaments. Whether you get the worst cards or the best, it’s only how you do relative to every other team that determines you’re rank - and it is that concept that makes bridge wonderful. The math, technique, bidding sequences, and people are what led me to found and preside the Bridge Club at my school.",
-    "I started cooking when I was 18 years old and fell in love with the creativity and freedom it brought me. Before then, making anything beyond a pancake from the store-bought mix truly was beyond a daunting task, so learning to master cuisines from every part of the world is truly liberating. In fact, it was the start of a Sunday tradition in my household, where every Sunday, myself, my father, and my girlfriend spend the evening cooking and refining our skills.",
-    "Nine years of public theater has honed my communication, leadership, and teamwork in ways that very few other activities have. Every role I’ve gotten is an oppurtunity to express myself in a new and creative way, while also crafting a comfortability with public speaking, and leading. I met some of my best friends through this activity, and have recently gotten into the directing and stage managing side of things.",
-    "Had I known that Speech and Debate would involve waking up at 5:00 AM to attend tournaments before I started, would I have gone on to qualify for state 31 times, qualify for nationals twice, win the state championship twice, and end as a national semifinalist in Informative Speech? Probably not. In that sense, I suppose it’s a good thing nobody told me. "
-]
+let rows = 2;
+let interests = [
+    {title: "Table Tennis", icon:"table-tennis", content: "Growing up and playing table tennis with my dad after work was one of my favorite pastimes, and remains so to this day, with the only real difference between the power, spin, and control at which we play. In fact, the same is true of many of the racquet sports I play, including racquetball, badminton, and tennis. However, table tennis was the game that I had the most passion for and grew the best at."},
+    {title: "Community", icon:"hands-helping", content: "As a member of my Indian community, I set up pujas, organize festivals, serve food at picnics and clean up. This is something I’ve done for as long as I can remember, and gives me an incredible sense of family. As a tutor; since high school, I’ve tutored students in English, Physics, Calculus, Pre-Calculus, Linear Algebra, and Computer Science. As a college student, I give tours to prospective students for the Honors Program as an Ambassador and organize various outreach programs on behalf of my school."},
+    {title: "Bridge", icon:"heart", content: "I’m a firm believer that contract bridge is not a game of luck. As far as card games go, it’s one where only skill can win tournaments. Whether you get the worst cards or the best, it’s only how you do relative to every other team that determines you’re rank - and it is that concept that makes bridge wonderful. The math, technique, bidding sequences, and people are what led me to found and preside the Bridge Club at my school."},
+    {title: "Cooking", icon:"utensils", content: "I started cooking when I was 18 years old and fell in love with the creativity and freedom it brought me. Before then, making anything beyond a pancake from the store-bought mix truly was beyond a daunting task, so learning to master cuisines from every part of the world is truly liberating. In fact, it was the start of a Sunday tradition in my household, where every Sunday, myself, my father, and my girlfriend spend the evening cooking and refining our skills."},
+    {title: "Theater", icon:"theater-masks", content: "Nine years of public theater has honed my communication, leadership, and teamwork in ways that very few other activities have. Every role I’ve gotten is an oppurtunity to express myself in a new and creative way, while also crafting a comfortability with public speaking, and leading. I met some of my best friends through this activity, and have recently gotten into the directing and stage managing side of things."},
+    {title: "Speech", icon:"comments", content: "Had I known that Speech and Debate would involve waking up at 5:00 AM to attend tournaments before I started, would I have gone on to qualify for state 31 times, qualify for nationals twice, win the state championship twice, and end as a national semifinalist in Informative Speech? Probably not. In that sense, I suppose it’s a good thing nobody told me. "}
+];
+function getInterests() {
+    html = `<div class="col-md-6 col-sm-12">`
+    for(let i = 0; i < interests.length; i++) {
+        if(i % (interests.length / rows) == 0) html += `<div class="row">`
+        html += `<div class="toggle" id="${i+1}"><i class="fas fa-4x fa-${interests[i].icon}"></i><br>${interests[i].title}</div>`
+        if((i+1) % (interests.length / rows) == 0) html += `</div>`
+    }
+    html+= `</div><div class="col-md-6 col-md-6 col-sm-12 vcenter">`;
+    for(let i = 0; i < interests.length; i++) {
+        html+= `<p class="text text-${i+1}"></p>`
+    }
+    html+= `</div>`;
+    $("#interest-picker").append(html);
+}
+
+getInterests();
 
 var prevId = 1;
 $(document).ready(function() {
-    animate();
-    $(".text-1").html(content[0]);
+    $(".text-1").html(interests[0].content);
     for (var i = 2; i <= toggles.length; i++) {
         $(".text-" + i).hide();
     }
     $(".toggle").click(function() {
         var id = $(this).attr('id');
         $(this)[0].style.color = themeColor;
-        $(".text-" + id).html(content[id - 1]);
+        $(".text-" + id).html(interests[id - 1].content);
         $(".text-" + prevId).hide();
         $("#" + prevId)[0].style.color = "white";
         $(".text-" + id).show();
@@ -126,7 +134,6 @@ var firstName = 'HIRSH ';
 var lastName = 'GUHA';
 var speed = 50;
 window.onload = function() {
-    
     if (window.innerWidth > 768) {
         typeWriter();
         setTimeout(showSocialMedia, 1100);
@@ -139,9 +146,9 @@ window.onload = function() {
     getNewestBlog();
 }
 
-var socialMedia = document.getElementsByClassName('social-media');
 
 function showSocialMedia() {
+    var socialMedia = document.getElementsByClassName('social-media');
     socialMedia[0].style.opacity = 1;
     socialMedia[0].style.transform = "translateY(30px)";
 }
@@ -351,7 +358,6 @@ function getHighlights() {
 }
 
 getHighlights();
-
 var $filters = $('.filter [data-filter]'),
     $cards = $('.cards [data-type]');
 
@@ -375,8 +381,6 @@ $filters.on('click', function(e) {
 });
 
 //BLOG
-//create home screen showing newest blog
-
 let title, date, body;
 async function getNewestBlog() {
     var counter = 1;
