@@ -23,6 +23,30 @@ var projects = [
     ],
   },
   {
+    title: "Blog.JS",
+    languages: ["html", "Javascript", "JQuery"],
+    description: "The lightest-weight, easiest, most customizable blogging platform you'll ever see.",
+    image: "blog.png",
+    features: [
+      {
+        icon: "file-code",
+        caption: "Add posts with raw HTML for maximum customizability"
+      },
+      {
+        icon: "hashtag",
+        caption: "Automatically adds urls slugs, allowing for direct navigation to a post"
+      },
+      {
+        icon: "fast-forward",
+        caption: "no reloads mean that going from post to post to listing is insanely fast"
+      },
+    ],
+    buttons: [
+      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/blog.js" },
+      { icon: "fas fa-binoculars", tooltip: "View Blog", link: "/blog" }
+    ],
+  },
+  {
     title: "ElectWise",
     languages: ["react.js", "node.js", "python", "apache", "aws"],
     description: "HDFS secured online voting system for large scale elections that allows voting from a computer, tablet, or phone",

@@ -11,6 +11,10 @@ body {
     background: var(--background-color);
 }
 
+* {
+    transition: 0.2s;
+}
+
 li {
     padding-bottom: 10px;
 }
@@ -40,8 +44,7 @@ p {
 #preview-title {
     font-size: 30px;
     cursor: pointer;
-    transition: .2s;
-}
+    }
 
 #preview-title a {
     text-decoration: none;
@@ -77,8 +80,7 @@ p {
     width:60%;
     padding:20px 0;
     cursor: pointer;
-    transition: 1s;
-}
+    }
 
 .logo:hover {
     transform: scale(0.9) rotate3d(0,1,0, 180deg);
@@ -106,8 +108,7 @@ button, .back {
     cursor: pointer;
     color: var(--background-color);
     padding: 10px;
-    transition: 0.4s;
-    text-decoration: none;
+        text-decoration: none;
 }
 
 
@@ -130,8 +131,7 @@ button:hover, .back:hover {
 
 #filter a {
     text-transform: uppercase;
-    transition: 0.4s;
-    padding: 1%;
+        padding: 1%;
     margin-bottom:1%;
     cursor: pointer;
 }
@@ -145,8 +145,7 @@ button:hover, .back:hover {
 #filter a.active {
     color: var(--text-color);
     background: var(--background-color);
-    transition: 0.4s;
-}
+    }
 
 #theme-toggle {
     position: fixed;
@@ -180,4 +179,8 @@ button:hover, .back:hover {
     img {
         max-width: 15em;
     }
+}
+
+td {
+    padding: 1%;
 }

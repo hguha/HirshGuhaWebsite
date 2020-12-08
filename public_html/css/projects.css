@@ -19,8 +19,7 @@
   width: 100%;
   margin: 0;
   transform: translateY(100px);
-  transition: 1s;
-  opacity: 0;
+    opacity: 0;
   cursor: grab;
 }
 
@@ -69,7 +68,6 @@
   height: calc(100% - 10px);
   width: calc(100% - 10px);
   opacity: 0;
-  transition: .5s;
   background-color: rgba(0,0,0,0.8);
   color: white;
   padding: 5%;
@@ -80,8 +78,7 @@
 .project-slider .card {
   margin: 5px 10px;
   height: auto;
-  transition: 0.5s;
-  opacity: 0.4;
+    opacity: 0.4;
 }
 .slick-dots li {
     display: inline;
@@ -96,7 +93,6 @@
     border: none;
     margin: 0 10px;
     font-size:0;
-    transition:0.4s;
     width: 15px;
     height: 15px;
     opacity: 0.4;
@@ -116,8 +112,7 @@
 .prev, .next {
   cursor: pointer;
   font-size: 40px;
-  transition: 0.3s;
-  color: white !important;
+    color: white !important;
   display:inline-block !important;
 }
 

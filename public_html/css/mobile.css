@@ -17,8 +17,7 @@
     left: 0;
     background: #222222dd;
     overflow-y: hidden;
-    transition: 0.5s;
-}
+    }
 
 .overlay-content {
     position: relative;
@@ -37,8 +36,7 @@
     font-size: 50px;
     cursor: pointer;
     color: white;
-    transition: 0.4s;
-}
+    }
 
 .openbtn:hover {
     color: #c3c3c3;
@@ -64,8 +62,7 @@
     font-size: 36px;
     color: #ebebeb;
     display: block;
-    transition: 0.3s;
-    text-transform: uppercase;
+        text-transform: uppercase;
 }
 
 .overlay a:hover {

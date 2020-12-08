@@ -21,8 +21,7 @@
     width: 33%;
     cursor: pointer;
     padding: 0;
-    transition: 0.4s;
-    user-select: none;
+        user-select: none;
     opacity: 0;
 }
 

@@ -18,6 +18,10 @@ function initTippy() {
     });
 }
 
+
+let filename = location.pathname.split('/').pop();
+filename = "index.html" ? "" : filename;
+
 //THEME
 let root = document.documentElement;
 let themeColor = "#114499";
@@ -36,10 +40,16 @@ function toggleExperience(element) {
         case "toggle-theme":
             root.style.setProperty("--text-color", darkModeOn ? "#3c3c3c" : "#fff");
             root.style.setProperty("--background-color", darkModeOn ? "#fff" : "#3c3c3c");
-            root.style.setProperty("--theme-color", themeColor = darkModeOn ? "#114499" :  "#00ccff");
             darkModeOn = !darkModeOn;
-            instance[1].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
-            $("[id$='-toggle']").css({"background-color": darkModeOn ? "white" : "black", "color": darkModeOn ? "black" : "white"});
+            if(!filename) {
+                root.style.setProperty("--theme-color", themeColor = darkModeOn ? "#00ccff" :  "#114499");
+                instance[1].setContent(darkModeOn ? "Change to Light Mode" : "Change To Dark Mode");
+                $("[id$='-toggle']").css({"background-color": darkModeOn ? "white" : "black", "color": darkModeOn ? "black" : "white"});
+            }
+            else {
+                document.getElementById("theme-toggle").innerHTML = darkModeOn ? "Light Mode" :  "Dark Mode";
+            }
+
             break;
         case "toggle-font":
             root.style.setProperty("--font", serifFont ? "'Open Sans', 'Roboto', sans-serif" : "serif");
@@ -121,12 +131,13 @@ $(document).ready(function() {
     //check theme
     darkModeOn = (localStorage.getItem("dark")) == "true" ? true: false;
     if(darkModeOn) {
-        toggleTheme();
+        // toggleTheme();
         root.style.setProperty("--text-color", darkModeOn ? "#3c3c3c" : "#fff");
         root.style.setProperty("--background-color", darkModeOn ? "#fff" : "#3c3c3c");
         root.style.setProperty("--theme-color", themeColor = darkModeOn ? "#114499" :  "#00ccff");
     }
 });
+
 
 //TYPEWRITER
 var i = 0;
@@ -134,16 +145,20 @@ var firstName = 'HIRSH ';
 var lastName = 'GUHA';
 var speed = 50;
 window.onload = function() {
-    if (window.innerWidth > 768) {
-        typeWriter();
-        setTimeout(showSocialMedia, 1100);
-    } else {
-        document.getElementById("first-name").innerHTML += "HIRSH ";
-        document.getElementById("last-name").innerHTML += "GUHA ";
-        showSocialMedia();
+    if(!filename || filename == "") {
+        if (window.innerWidth > 768) {
+            typeWriter();
+            console.log("Got");
+            setTimeout(showSocialMedia, 1100);
+        } else {
+            document.getElementById("first-name").innerHTML += "HIRSH ";
+            document.getElementById("last-name").innerHTML += "GUHA ";
+            showSocialMedia();
+        }
+        getMenus();
+        getNewestBlog();
+        createFilters($('.cards [data-type]'));
     }
-    getMenus();
-    getNewestBlog();
 }
 
 
@@ -273,7 +288,7 @@ var menuitems = [
     {loc: "#hero", name: "Home"},
     {loc: "#projects", name: "Projects"},
     {loc: "#about", name: "About"},
-    {loc: "interests", name: "Interests"},
+    {loc: "#interests", name: "Interests"},
     {loc: "#highlights", name: "Highlights"},
     {loc: "/blog", name: "Blog"},
     {loc: "#contact", name: "Contact"},
@@ -316,7 +331,9 @@ function closeNav() {
 }
 
 //FOOTER
-document.getElementById("curYear").innerHTML = new Date().getFullYear();
+if(document.getElementById("curYear")) {
+    document.getElementById("curYear").innerHTML = new Date().getFullYear();
+}
 
 //CONTACT
 function submitForm() {
@@ -358,27 +375,17 @@ function getHighlights() {
 }
 
 getHighlights();
-var $filters = $('.filter [data-filter]'),
-    $cards = $('.cards [data-type]');
 
-$filters.on('click', function(e) {
-    e.preventDefault();
-
-    $filters.removeClass('active');
-    $(this).addClass('active');
-
-    var $filterType = $(this).attr('data-filter');
-
-    if ($filterType == 'all') {
-        $cards.removeClass('is-animated').fadeOut().promise().done(function() {
-            $cards.addClass('is-animated').fadeIn();
-        });
-    } else {
-        $cards.removeClass('is-animated').fadeOut().promise().done(function() {
-            $cards.filter('[data-type = "' + $filterType + '"]').addClass('is-animated').fadeIn();
-        });
-    }
-});
+function createFilters(cards) {
+    filters = $('#filter [data-filter]');
+    filters.on('click', function(e) {
+        filters.removeClass('active');
+        $(this).addClass('active');
+        var filterType = $(this).attr('data-filter');
+        if (filterType == 'all') cards.fadeOut(200).promise().done(function() {cards.fadeIn(200);});
+        else cards.fadeOut(200).promise().done(function() {cards.filter('[data-type = "' + filterType + '"]').fadeIn(200);});
+    });
+}
 
 //BLOG
 let title, date, body;
