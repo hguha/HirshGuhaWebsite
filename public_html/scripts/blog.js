@@ -63,6 +63,18 @@ class Blog {
       });
   }
 
+
+  createFilters(cards) {
+    filters = $('#filter [data-filter]');
+    filters.on('click', function(e) {
+        filters.removeClass('active');
+        $(this).addClass('active');
+        var filterType = $(this).attr('data-filter');
+        if (filterType == 'all') cards.fadeOut(200).promise().done(function() {cards.fadeIn(200);});
+        else cards.fadeOut(200).promise().done(function() {cards.filter('[data-type = "' + filterType + '"]').fadeIn(200);});
+    });
+  }
+
   getFilters() {
     let keys = Object.keys(this.filters)
     let html = `<a class="active" data-filter="all">All</a>`
@@ -70,7 +82,7 @@ class Blog {
       html+= `<a data-filter="${keys[i]}">${this.filters[keys[i]]}</a>`
     }
     $("#filter").append(html);
-    createFilters($('#content [data-type]'));
+    this.createFilters($('#content [data-type]'));
     return html;
   }
 };

@@ -1,0 +1,85 @@
+@media (max-width: 1000px) {
+    #project-section .project-grid, #project-section .puzzle-js-grid {
+        padding: 0;
+    }
+
+    .portrait-col {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    #contact-section input,
+    #contact-section textarea {
+        width: 90%;
+    }
+    .noncode {
+        display: none;
+    }
+    #skills .code {
+        width: 100%;
+    }
+    #stats .row {
+        justify-content: center;
+    }
+    #highlights .highlight-item {
+        font-size: 11px;
+    }
+    .overlay-text {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-text {
+        display: none;
+    }
+
+    .portrait-col {
+        display: block;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .portrait {
+        width: 160px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    #research-section .fp-tableCell {
+        padding-bottom: 100px;
+    }
+    .overlay-text {
+        font-size: 12px;
+    }
+
+    #stats .col {
+        font-size: 0.8em !important;
+        display: block;
+    }
+
+    #skills .progress {
+        height: 8%;
+    }
+
+    #stats span {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 400px) {
+    .projects-col {
+        flex: 100%;
+    }
+    section {
+        padding: 1%;
+    }
+    .projects-col {
+        display: block !important;
+    }
+}
