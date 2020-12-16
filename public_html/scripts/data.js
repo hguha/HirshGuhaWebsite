@@ -240,3 +240,4 @@ let stats = [
     { value: 20000, name: "Views on my Pages" },
     { value: 3000, name: "Teas Consumed" }
 ]
+let highlightFilters = ["theater", "bridge", "speech", "academic"];

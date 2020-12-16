@@ -7,22 +7,12 @@
         color: white;
     }
     
-    i {
-        color: inherit;
-        transition: 0.6s;
-
-    }
-    
-    html {
-        font-size: 62.5%;
-    }
-    
+    i {color: inherit;}    
+    html {font-size: 62.5%;}    
     body {
-        color: black;
         letter-spacing: .18em;
         font-size: 13px;
         font-family: "Open Sans", "Roboto", sans-serif;
-        font-weight: 100;
     }
     
     a {
@@ -32,18 +22,9 @@
         text-decoration: none;
     }
     
-    a:hover {
-        color: magenta;
-    }
-    
-    h2 {
-        font-size: 4em;
-    }
-    
-    h3 {
-        font-size: 2em;
-    }
-    
+    a:hover {color: magenta;}    
+    h2 {font-size: 4em;}    
+    h3 {font-size: 2em;}    
     button {
         padding: 1%;
         font-size: 15px;
@@ -60,6 +41,12 @@
         background-position: right center;
     }
 
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .menu-logo img {
         display: block;
         position: fixed;
@@ -70,15 +57,10 @@
         transition: 0.6s;
     }
 
-    .menu-logo img:hover {
-        transform: rotateY(180deg);
-    }
-    /* NAV STYLES */
-    
+    .menu-logo img:hover {transform: rotateY(180deg);}    
     .toggle-menu {
         width: 50px;
         height: 50px;
-        display: inline-block;
         position: fixed;
         top: 10px;
         right: 10px;
@@ -96,32 +78,17 @@
         transition: all .3s;
     }
 
-    .toggle-menu:hover {
-        transform: rotateZ(90deg);
-    }
-    
-    .toggle-menu i:nth-child(1) {
-        top: 16px;
-    }
-    
-    .toggle-menu i:nth-child(2) {
-        top: 26px;
-    }
-    
-    .toggle-menu i:nth-child(3) {
-        top: 36px;
-    }
-    
+    .toggle-menu:hover {transform: rotateZ(90deg);}    
+    .toggle-menu i:nth-child(1) {top: 16px;}    
+    .toggle-menu i:nth-child(2) {top: 26px;}    
+    .toggle-menu i:nth-child(3) {top: 36px;}    
     .open-menu i:nth-child(1) {
         top: 25px;
         -webkit-transform: rotateZ(45deg);
         transform: rotateZ(45deg);
     }
     
-    .open-menu i:nth-child(2) {
-        background: transparent;
-    }
-    
+    .open-menu i:nth-child(2) {background: transparent;}    
     .open-menu i:nth-child(3) {
         top: 25px;
         -webkit-transform: rotateZ(-45deg);
@@ -137,7 +104,7 @@
         transition: all 1s;
     }
     
-    .open-menu~nav {
+    .open-menu nav {
         opacity: 1;
         padding: 80px 0;
         z-index: 11;
@@ -151,10 +118,7 @@
         padding-top: 10%;
     }
     
-    nav li {
-        flex: 1;
-    }
-    
+    nav li {flex: 1;}    
     nav li a {
         font-size: 2em;
         display: block;
@@ -162,19 +126,9 @@
         text-align: center;
         transition: background .3s;
     }
-    /* fullPage.js */
     
-    #fp-nav {
-        text-transform: uppercase;
-        /* transform: none;
-top: auto;
-bottom: 10px; */
-    }
-    
-    .fp-slidesNav ul {
-        text-align: center;
-    }
-    
+    #fp-nav {text-transform: uppercase;}    
+    .fp-slidesNav ul {text-align: center;}    
     #fp-nav ul li a span,
     .fp-slidesNav ul li a span {
         width: 8px;
@@ -193,6 +147,7 @@ bottom: 10px; */
         border: 1px solid white;
         background: white;
     }
+    
     /* BLOG */
     
     #blog-section {
@@ -224,10 +179,7 @@ bottom: 10px; */
     }
     /* CONTACT */
     
-    #contact-section {
-        text-align: center;
-    }
-    
+    #contact-section {text-align: center;}    
     #contact-section input,
     textarea {
         width: 40%;
@@ -237,10 +189,7 @@ bottom: 10px; */
         resize: none;
     }
     
-     ::placeholder {
-        color: lightgray;
-    }
-    
+     ::placeholder {color: lightgray;}    
     footer {
         vertical-align: bottom;
         background: #3c3c3c;
@@ -257,10 +206,7 @@ bottom: 10px; */
         color: white;
     }
     
-    #home-section h1 {
-        font-size: 13vw;
-    }
-    
+    #home-section h1 {font-size: 13vw;}    
     #home-section #last-name {
         color: transparent;
         -webkit-text-stroke: 1px white;
@@ -326,10 +272,7 @@ bottom: 10px; */
         cursor: pointer;
     }
     
-    #highlights #filter a:hover {
-        text-decoration: none;
-    }
-    /* SKILLS */
+    /* SKILLS AND STATS*/
     
     #stats {
         text-align: center;
@@ -342,22 +285,10 @@ bottom: 10px; */
         justify-content: space-between;
     }
     
-    #stats .num {
-        font-size: 1em;
-    }
-    
-    #stats div {
-        padding: 1%;
-    }
-    
-    #stats span {
-        font-size: 20px;
-    }
-    
-    #skills {
-        padding: 0 4% 5% 4%;
-    }
-    
+    #stats .num {font-size: 1em;}    
+    #stats div {padding: 1%;}    
+    #stats span {font-size: 20px;}    
+    #skills {padding: 0 4% 5% 4%;}    
     #skills .progress {
         margin-bottom: 2%;
         height: 20px;
@@ -430,33 +361,19 @@ bottom: 10px; */
         transition: 0.3s;
     }
     
-    .overlay .active-anchor {
-        color: white;
-    }
-    
+    .overlay .active-anchor {color: white;}    
     .overlay a:hover,
-    .overlay a:focus {
-        color: #f1f1f1;
-    }
+    .overlay a:focus {color: #f1f1f1;}    
     /* PROJECT */
     
-    section {
-        padding: 0 40px;
-    }
-    
-    .fade-in {
-        animation: fadeIn 1s;
-    }
-    
+    section {padding: 0 40px;}    
+    .fade-in {animation: fadeIn 1s;}    
     @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
+        0% {opacity: 0;}        
+        100% {opacity: 1;}    
     }
     
+    .fa-circle {opacity: 0.2;}    
     .img-hover {
         opacity: 0.6 !important;
         filter: grayscale(0) !important;
@@ -469,10 +386,7 @@ bottom: 10px; */
         display: table-cell;
     }
 
-    .project-grid {
-        padding: 0 12%;
-    }
-    
+    .project-grid {padding: 0 12%;}    
     .project-overlay {
         position: absolute;
         bottom: 0;
@@ -494,14 +408,8 @@ bottom: 10px; */
         margin: auto;
     }
     
-    .feature {
-        padding: 1% 0;
-    }
-    
-    .project-image {
-        margin: auto;
-    }
-    
+    .feature {padding: 1% 0;}    
+    .project-image {margin: auto;}    
     #project-section img {
         filter: grayscale(100%);
         width: 100%;
@@ -518,12 +426,6 @@ bottom: 10px; */
         text-align: center;
     }
     
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
     .projects-col, .puzzles-js-col {
         flex: 33%;
         position: relative;
@@ -534,8 +436,7 @@ bottom: 10px; */
         padding: 10px 0;
     }
     
-    .feature,
-    .text {
+    .feature, .text {
         overflow: hidden;
         text-align: left;
     }
@@ -552,19 +453,10 @@ bottom: 10px; */
         vertical-align: middle;
     }
 
-    #about-section .about-me {
-        padding: 0 3%;
-    }
-    
-    .about-col {
-        flex: 50%;
-    }
+    #about-section .about-me {padding: 0 3%;}    
+    .about-col {flex: 50%;}
 
-
-    .logo img {
-        width: 100%;
-    }
-
+    .logo img {width: 100%;}
     .logo-text {
         padding-top: 5%;
         text-align: center;
@@ -586,42 +478,15 @@ bottom: 10px; */
         box-shadow: 0 0 100px orange;
     }
 
-    .portrait img {
-        filter: grayscale(1);
-    }
-
+    .portrait img {filter: grayscale(1);}
     .about-text {
         padding-top: 3%;
         font-size: 1.5em;
         text-align: center;
     }
-    
-    .interest-selector {
-        width: max(10vw, 150px);
-        height: max(10vw, 150px);
-        text-align: center;
-        transition: 0.5s;
-    }
-    
-    .interest-selector:hover {
-        color: cyan;
-        transform: scale(0.95);
-        cursor: pointer;
-    }
-    
-    .fa-circle {
-        opacity: 0.2;
-    }
+
     /* RESEARCH  */
     
-    .paper-title {
-        font-size: 20px;
-    }
-    
-    .paper-abstract {
-        padding: 1% 0;
-    }
-    
-    #research-section button {
-        margin-right: 1%;
-    }
+    .paper-title {font-size: 20px;}    
+    .paper-abstract {padding: 1% 0;}    
+    #research-section button {margin-right: 1%;}

@@ -141,10 +141,7 @@ function getHighlights() {
                     <hr>
                     <div id="filter">
                         <a class="all active" data-filter="all">All</a>
-                        <a data-filter="theater">Theater</a>
-                        <a data-filter="bridge">Bridge</a>
-                        <a data-filter="speech">Speech</a>
-                        <a data-filter="academic">Academic</a>
+                        ${highlightFilters.map(x => `<a data-filter="${x}">${x}</a>`).join(" ")}
                     </div>
                     <hr>
                     <div class="cards"></div> <!--Renders on load -->
@@ -221,7 +218,7 @@ function submitForm() {
     let formValid = name.checkValidity() && message.checkValidity() && email.checkValidity();
     if (formValid) {
         document.getElementById("contact-form").submit();
-    } else {}
+    }
 }
 
 //INTERESTS
