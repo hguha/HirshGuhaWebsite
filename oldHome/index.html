@@ -1,0 +1,253 @@
+<HTML>
+
+<head>
+    <!-- EXTERNAL -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111498872-4"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/interests.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <link rel='icon' href='images/hg-black.svg' type='image/x-icon' />
+
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <title>Hirsh Guha</title>
+    <meta name="description"
+        content="The portfolio website of Hirsh Guha - designed to demonstrate many of the projects, interests, awards, honors, and skills. Feel free to contact me!">
+    <meta name="keywords" content="Hirsh, Guha, Portfolio, Programming, Theater, Bridge, Github">
+</head>
+
+<body>
+
+    <!--
+    Written, Designed, and Coded by
+    _    _ _          _        _____       _
+   | |  | (_)        | |      / ____|     | |
+   | |__| |_ _ __ ___| |__   | |  __ _   _| |__   __ _
+   |  __  | | '__/ __| '_ \  | | |_ | | | | '_ \ / _` |
+   | |  | | | |  \__ \ | | | | |__| | |_| | | | | (_| |
+   |_|  |_|_|_|  |___/_| |_|  \_____|\__,_|_| |_|\__,_|
+
+
+    -->
+    <div class="toggles">
+        <button id="exp-toggle" onclick="toggleExpMenu()" data-tippy-content="Change Your Experience"><i
+                class="fas fa-ellipsis-h"></i></button>
+        <button id="theme-toggle" onclick="toggleExperience('toggle-theme')" data-tippy-content="Change To Dark Mode"><i
+                class="fas fa-lightbulb"></i></button>
+        <button id="font-toggle" onclick="toggleExperience('toggle-font')" data-tippy-placement="left"
+            data-tippy-content="Change To Serif"><i class="fas fa-font"></i></button>
+        <button id="menu-toggle" onclick="toggleExperience('toggle-menu')" data-tippy-content="Change To Mobile Menu"><i
+                class="fas fa-bars"></i></button>
+        <br>
+    </div>
+    <div class="content">
+        <!-- HERO -->
+        <div id="hero">
+            <h1><span id="first-name"></span><span id="last-name"><span></h1><br>
+            <div class="sm-icons">
+                <a href="https://twitter.com/hirshguha" target="_blank" class="sm-icon"><i
+                        class="fab fa-2x fa-twitter"></i></a>
+                <a href="https://instagram.com/hirshguha" target="_blank" class="sm-icon"><i
+                        class="fab fa-2x fa-instagram"></i></i></a>
+                <a href="https://www.facebook.com/hirsh.guha/" target="_blank" class="sm-icon"><i
+                        class="fab fa-2x fa-facebook"></i></a>
+                <a href="https://github.com/hguha" target="_blank" class="sm-icon"><i
+                        class="fab fa-2x fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hirsh-guha-40b247191" target="_blank" class="sm-icon"><i
+                        class="fab fa-2x fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div id="what-im-up-to">
+            I'm a Computer Science Ph.D. Student at Princeton University involved with election security policy at the
+            Center for Information Technology Policy on campus. I also work at Alarm.com, coding better interfaces for
+            the customer site.
+            I gradutated from Kansas University with a B.S. in Computer Science in two years(something like 29 credits a
+            semester), and absolutely love to spend my free time coding, researching, and cooking.
+            <br><br>
+            <b>What I'm working on: </b><span class="workingon">Self-contained client side blogging platform</span>
+            <br><br><br>
+            <em>This website uses as few libraries as possible, so most dynamic pieces you see are coded entirely by me
+                using jQuery.</em>
+
+        </div>
+
+        <!-- PROJECTS -->
+        <div id="projects" class="projects">
+            <h2 style="color:white">Projects</h2>
+            <div class="project-slider"></div> <!-- Renders on load -->
+
+            <!-- SMALL PROJECTS -->
+            <div id="small-projects">
+                <h2 style="color: white">Puzzles.JS</h2>
+                <div class="description">I love puzzle games... I love coding... the synergy was just too good to pass
+                    up. I've made so many puzzles that I thought it fitting to consolidate them into one place. Thus,
+                    puzzle.js was born: an object-oriented extendible javascript library featuring 9 different games.
+                </div>
+                <div class="small-projects"></div><!-- Renders on load -->
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div id="about">
+            <div class="quote">
+                <h3>"Life is too important to be taken seriously"</h3>
+                Oscar Wilde
+            </div>
+            <div class="row equal">
+                <div class="col-md d-flex">
+                    <div class="card flex-fill philosophy">
+                        <h2 style="color:#3c3c3c">Philosophy</h2>
+                        <p style="padding: 3%">
+                            I believe that it is not the big, bold idea that changes the world, but rather the details
+                            of the execution. It is the pieces that people may not even notice that make an idea,
+                            product, or goal tangible. This principle is what I strive to abide by every day: creating
+                            beautiful and functional things with a dedication to detail to one day change the world.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md d-flex">
+                    <div class="card flex-fill about">
+                        <h2 style="color:white">Who I Am</h2>
+                        <p style="padding: 3%">
+                            I am an engineer, a researcher, singer, actor, writer, designer, and cook with a serious
+                            passion for UI design, data analytics, and policy change. That, of course, is the long way
+                            of saying that I like to think of myself as a creator. I have a background in speech,
+                            debate, theater, math, and of course, computer science, and what I’ve found is that all
+                            these fields are not so different - they allow me to imagine a world that doesn’t exist, and
+                            make it a reality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- INTERESTS -->
+        <div id="interests">
+            <div class="top-arrow"></div>
+            <h2 style="color:white; padding-top:2%">Interests</h2>
+             <div id="interest-picker" class="row"></div> <!-- Renders on load -->
+            <div class="bottom-arrow"></div>
+        </div>
+
+        <!-- HIGHLIGHTS -->
+        <div id="highlights">
+            <h2>Highlights</h2>
+            <hr>
+            <div id="filter">
+                <a class="all active" data-filter="all">All</a>
+                <a data-filter="theater">Theater</a>
+                <a data-filter="bridge">Bridge</a>
+                <a data-filter="speech">Speech</a>
+                <a data-filter="academic">Academic</a>
+            </div>
+            <hr>
+            <div class="cards"></div> <!-- Renders on load -->
+        </div>
+
+        <!-- BLOG -->
+        <div id="blog">
+            <div class="post">
+                <h2>Blog</h2>
+                <hr>
+                <div id="image"></div>
+                <div id="date"></div>
+                <div id="title"></div>
+                <span id="preview"></span><a href="javascript:openBlog();">...READ MORE</a>
+                <br><br>
+                <button onclick="window.location.href='/blog'" data-tippy-content="View All"><i
+                        class="fas fa-cubes"></i></button>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <div id="stats">
+            <div class="row">
+                <div class="col">
+                    <span data-num="100" class="num">0</span>+<br>
+                    <span>Months of Experience</span>
+                </div>
+                <div class="col">
+                    <span data-num="30000" class="num">0</span>+<br>
+                    <span>Lines of Code Written</span>
+                </div>
+                <div class="col">
+                    <span data-num="20000" class="num">0</span>+<br>
+                    <span>Views on my Pages</span>
+                </div>
+                <div class="col">
+                    <span data-num="3000" class="num">0</span>+<br>
+                    <span>Coffees Consumed</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SKILLS -->
+        <div id="skills">
+            <hr style="margin:0;padding-top:1%">
+            <div class="row">
+                <div class="col code"></div> <!-- Renders on load -->
+                <div class="col noncode"></div> <!-- Renders on load -->
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contact">
+            <h2 style="color:white">Contact</h2>
+            <form id="contact-form" action="https://formspree.io/hirsh@allofe.com" method="POST">
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <input id="name" type="text" name="name" placeholder="Name" required>
+                        <input id="email" type="email" name="_replyto" placeholder="Email" required><br>
+                        <input type="text" name="_subject" placeholder="Subject"><br>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+                        <input type="hidden" name="_next" value="https://hirshguha.com/contact-thanks.html" />
+                    </div>
+                </div>
+
+                <button onclick="submitForm()" data-tippy-content="Submit"><i class="fas fa-paper-plane"></i></button>
+
+            </form>
+        </div>
+
+
+        <!-- FOOTER -->
+        <div id="footer">
+            &copy; 2018-<span id="curYear"></span> Hirsh Guha<br>
+            <a href="https://twitter.com/hirshguha" target="_blank"><i class="fab fa-2x fa-twitter"></i></a>
+            <a href="https://instagram.com/hirshguha" target="_blank"><i class="fab fa-2x fa-instagram"></i></i></a>
+            <a href="https://www.facebook.com/hirsh.guha/" target="_blank"><i class="fab fa-2x fa-facebook"></i></a>
+            <a href="https://github.com/hguha" target="_blank"><i class="fab fa-2x fa-github"></i></a>
+            <a href="www.linkedin.com/in/hirsh-guha-40b247191" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@4.3.5/umd/index.all.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="script/script.js" differ></script>
+        <script src="script/slider.js" differ></script>
+    </div>
+
+</body>
+
+</HTML>

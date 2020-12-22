@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <!-- Created with Vectornator for iOS (http://vectornator.io/) --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" viewBox="0 0 720 720">
+<metadata>
+<vectornator:setting key="DimensionsVisible" value="1"/>
+<vectornator:setting key="New" value="1"/>
+<vectornator:setting key="SnapToPoints" value="0"/>
+<vectornator:setting key="GuidesVisible" value="1"/>
+<vectornator:setting key="RulersVisible" value="1"/>
+<vectornator:setting key="CMYKEnabledKey" value="0"/>
+<vectornator:setting key="SnapToEdges" value="0"/>
+<vectornator:setting key="DisplayWhiteBackground" value="0"/>
+<vectornator:setting key="SnapToGuides" value="1"/>
+<vectornator:setting key="GridSpacing" value="36"/>
+<vectornator:setting key="Units" value="Pixels"/>
+<vectornator:setting key="DynamicGuides" value="0"/>
+<vectornator:setting key="SnapToGrid" value="0"/>
+</metadata>
+<defs/>
+<g id="Layer 1" vectornator:layerName="Layer 1">
+<path d="M360.019+0C161.196+2.5157e-05+0+161.189+0+360.019C7.58536e-05+558.85+161.196+720+360.019+720C558.843+720+720+558.85+720+360.019C720+348.497+719.388+337.106+718.33+325.861L654.676+325.861C654.702+326.079+654.728+326.299+654.754+326.517L470.161+326.517L470.161+129.641L404.837+129.641L404.837+326.517L316.056+326.517L316.056+129.641L250.732+129.641L250.732+326.517L197.914+326.517L156.902+394.758L250.732+394.564L250.732+589.625L316.056+589.625L316.056+394.41L404.837+394.217L404.837+589.625L470.161+589.625L470.161+394.062L654.87+393.637C638.289+539.675+513.413+653.228+361.728+653.228C198.755+653.228+66.6055+522.184+66.6055+360.56C66.6055+198.936+198.755+67.9311+361.728+67.9311C475.551+67.9311+574.268+131.867+623.49+225.471L693.94+225.471C640.646+93.3087+511.263+0+360.019+0Z" opacity="1" fill="#fefefe"/>
+</g>
+</svg>

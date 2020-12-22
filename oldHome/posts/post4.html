@@ -1,0 +1,74 @@
+<body>
+    <div id="title">The Blog Post About Blog Posts</div>
+    <div id="tag">tutorial</div>
+    <div id="date">8th December, 2020</div>
+    <div id="body">
+        In my very first blog post, entitled "Hello World", I noted the reasons why I wanted to create a blogging platform of my own. In particular, I felt that the existing plaforms I could use via npm, or another third-party company were quite heavy, and required quite a bit of work each time I wanted to create a new blog. In that spirit, I have written blog.js, a completely client-side blogging platform that allows a user to simply drag and drop a folder into their website project, and they now have the exact same platform that you are reading this post on.
+        <br><br>
+        <a href='https://github.com/hguha/blog.js'>Here</a> is the link, if you want to check it out for yourself!
+        <br><br>
+        Now, I'd like to walk you through how to use the platform in it's entirety. While it's described in the <a href='https://github.com/hguha/blog.js/blob/main/README.md'>blog.js README</a>, I will also provide that information here. If you have any questions or comments, feel free to <a href="/#contact">send me a message!</a>
+        <br><br>
+
+<h3>Getting Started</h3>
+<ol>
+    <li>in your project folder, run: <code>git clone https://github.com/hguha/blog.js.git</code></li>
+    <li>Open your project in a server. Any server will do. </li>
+    <li>Profit</li>
+</ol>
+
+<h3>To Edit Template</h3>
+The template, <code>blog.html</code> contains a "TO CUSTOMIZE" section that you can fill in. Once it's filled in, the blog is ready to use. Here are the option parameters that you can specify:
+
+<table border style="border-collapse: collapse;">
+    <th>Name</th>
+    <th>Description</th>
+    <tr>
+        <td>title</td>
+        <td>The title of the page and of the blog</td>
+    </tr>
+    <tr>
+        <td>subtitle</td>
+        <td>The subtitle of the blog that appears in the sidebar</td>
+    </tr>
+    <tr>
+        <td>filters</td>
+        <td>Dictionary that maps a <code>filterName : filterLabel</code></td>
+    </tr>
+    <tr>
+        <td>postsFolder</td>
+        <td>name of the folder that contains all posts</td>
+    </tr>
+    <tr>
+        <td>postPrefix</td>
+        <td>prefix of each post's name that will be enumerated(e.g. post1, post2, etc. has a prefix of "post" and blog1, blog2, etc. has a prefix of "blog")</td>
+    </tr>
+</table>
+<br><br>
+
+<h3>To Add/Edit Posts</h3>
+Each post must be within the <code>postsFolder</code> and named as <code>postPrefix</code> followed by the next number(starting at 1). It will be a <code>.html</code> file.
+
+Then within your post file(the sample provided is <code>post1.html</code>), the template is as follows:
+
+Then within your post file(the sample provided is <code>post1.html</code>), the template is as follows:
+<br>
+<br>
+<code style="display:block;background:lightgray;padding:2%">
+    &lt;body><br>
+    &emsp;&emsp;&lt;div id="title">Title of Blog 1&lt;/div><br>
+    &emsp;&emsp;&lt;div id="tag">tutorial&lt;/div><br>
+    &emsp;&emsp;&lt;div id="date">22nd December, 2020&lt;/div><br>
+    &emsp;&emsp;&lt;div id="body"><br>
+    &emsp;&emsp;&emsp;&emsp;This is a sample blog post, written with raw HTML to your hearts desire.<br>
+    &emsp;&emsp;&lt;/div><br>
+    &lt;/body><br>
+</code>
+<br><br>
+Each of the div-tag ids(<code>title, tag, date, body</code>) are necessary, along with the <code>&lt;body></code> tag and cannot be changed without altering the code in this version(future versions may allow any tag as a parameter to the blog object). 
+<br><br>
+<h3>To Style</h3>
+I like to think my styles are pretty clean, but if you want to change them, you can add/edit the styles directly within <code>blog.css</code>, or add your own stylesheet that is linked to <code>blog.html</code>. 
+<br><br>
+I told you, insanely customizable!
+</body>
