@@ -72,12 +72,13 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     .projects-col {
         flex: 100%;
     }
-    section {
-        padding: 1%;
+    #project-section .project-grid {
+        padding: 0 5%;
+        padding-bottom: 30px;
     }
     .projects-col {
         display: block !important;

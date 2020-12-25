@@ -3,7 +3,7 @@ $('.toggle-menu').on('click', function() {
     $(this).parent().toggleClass('open-menu');
 });
 
-let projectResizer = 400;
+let projectResizer = 450;
 
 function getMenu() {
     let locs = menu.map(x => `#${x.toLowerCase()}`);
