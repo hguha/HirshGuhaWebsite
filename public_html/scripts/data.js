@@ -115,17 +115,17 @@ var projects = [{
         ],
     },
     {
-        title: "Dogstagram",
-        languages: ["python", "flask", "jquery", "firebase", "javascript", "tensorflow"],
-        description: "A social media/image sharing platform with a twist: image classification prevents upload of any image other than dogs",
-        image: "dogstagram.png",
+        title: "Expenser",
+        languages: ["Javascript", "Firebase", "Firestore", "Chart.JS"],
+        description: "A progressive web app for tracking month-to-month expenses and monitoring spending habits",
+        image: "expenser.png",
         features: [
-            { icon: "paw", caption: "Tensor Flow Image Classification assures \"dog\" tag is set before uploading the image" },
-            { icon: "tachometer-alt", caption: "Dashboard and friend system allows users to see what other users they follow are posting" },
-            { icon: "image", caption: "Add, Delete, Modify, and caption photos" },
+            { icon: "edit", caption: "Easy interface to edit/add expenses with a name, price, and date and have it update in real time" },
+            { icon: "download", caption: "manifest.json ensures the app is a PWA, and can be downloaded on a phone, tablet, or computer." },
+            { icon: "chart-pie", caption: "Series of useful graphs allow intuitive understanding of spending habits." },
         ],
         buttons: [
-            { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/Dogstagram" },
+            { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/Expenser" }
         ],
     },
     {
@@ -159,17 +159,17 @@ var projects = [{
         ],
     },
     {
-        title: "Website",
-        languages: ["html", "js", "jquery", "slick.js"],
-        description: "A website entirely coded towards me in order to demonstrate my abilities in web design and dynamic websites",
-        image: "website.png",
+        title: "Dogstagram",
+        languages: ["python", "flask", "jquery", "firebase", "javascript", "tensorflow"],
+        description: "A social media/image sharing platform with a twist: image classification prevents upload of any image other than dogs",
+        image: "dogstagram.png",
         features: [
-            { icon: "toggle-on", caption: "togglable Interests section written entirely by me using jQuery" },
-            { icon: "sliders-h", caption: "Slick.js library used to create project slider with equal height DIVs" },
-            { icon: "mobile", caption: "Bootstrap framework and use of keyframes creates a perfectly responsive site, viewable at any viewport" },
+            { icon: "paw", caption: "Tensor Flow Image Classification assures \"dog\" tag is set before uploading the image" },
+            { icon: "tachometer-alt", caption: "Dashboard and friend system allows users to see what other users they follow are posting" },
+            { icon: "image", caption: "Add, Delete, Modify, and caption photos" },
         ],
         buttons: [
-            { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/HirshGuhaWebsite" }
+            { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/Dogstagram" },
         ],
     },
     {

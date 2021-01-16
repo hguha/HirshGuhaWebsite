@@ -1,14 +1,8 @@
-:root {
-    --background-color: #fff;
-    --text-color: #3c3c3c;
-    --theme-color: #114499;
-    --font: "Open Sans", "Roboto", sans-serif;
-  }
-
 body {
     margin: 0;
     font-family: "Open Sans", "Roboto", sans-serif;
-    background: var(--background-color);
+    background: #222;
+    color: white;
 }
 
 * {
@@ -19,14 +13,14 @@ li {
     padding-bottom: 10px;
 }
 
+
 #sidebar {
     height: 100%;
     width: 25vw;
     position: fixed;
     z-index: 1;
-    background-color: gray;
+    background: #3c3c3c;;
     overflow-x: hidden;
-    color: var(--background-color);
     margin: 0 auto;
     text-align: center;
 }
@@ -36,19 +30,34 @@ p {
 }
 
 #content {
-    color: var(--text-color);
     margin-left: 25vw;
     padding: 2%;
+}
+
+code.block {
+    padding: 2%;
+    background:#3c3c3c;
+    display: block;
+}
+
+#content a {
+    text-decoration: none;
+    color: #999;
+    transition: 0.3s;
+}
+
+#content a:hover {
+    color: cyan;
 }
 
 #preview-title {
     font-size: 30px;
     cursor: pointer;
-    }
+}
 
 #preview-title a {
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
 }
 
 #preview-title a:hover {
@@ -65,7 +74,7 @@ p {
 }
 
 #preview {
-    color: lightgray;
+    color: #555;
 }
 
 .post {
@@ -102,13 +111,12 @@ padding-top: 20px;
     line-height: 1.5;
 }
 
-button, .back {
-    background: var(--text-color);
-    border: 1px solid #3c3c3c;
+.back {
+    border: 1px solid white;
     cursor: pointer;
-    color: var(--background-color);
+    color: white;
     padding: 10px;
-        text-decoration: none;
+    text-decoration: none;
 }
 
 
@@ -116,10 +124,9 @@ img {
     max-width: 20em;
 }
 
-button:hover, .back:hover {
-    background:  var(--background-color);
-    border: 1px solid var(--text-color);
-    color: var(--text-color)
+#content a.back:hover {
+    background: white;
+    color: #3c3c3c;
 }
 
 #filter {
@@ -141,11 +148,10 @@ button:hover, .back:hover {
     color:  #114499;
 }
 
-
 #filter a.active {
-    color: var(--text-color);
-    background: var(--background-color);
-    }
+    color: #3c3c3c;
+    background: white;
+}
 
 #theme-toggle {
     position: fixed;

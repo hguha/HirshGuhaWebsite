@@ -70,6 +70,10 @@
     #stats span {
         font-size: 17px;
     }
+
+    .toggle-menu {
+        display: block;
+    }
 }
 
 @media (max-width: 450px) {

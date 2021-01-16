@@ -16,13 +16,13 @@
     }
     
     a {
-        color: cyan;
+        color: #999;
         cursor: pointer;
         transition: 0.5s;
         text-decoration: none;
     }
     
-    a:hover {color: magenta;}    
+    a:hover {color: black;}    
     h2 {font-size: 4em;}    
     h3 {font-size: 2em;}    
     button {
@@ -65,6 +65,7 @@
         top: 10px;
         right: 10px;
         z-index: 15;
+        display: none;
     }
     
     .toggle-menu i {
@@ -224,7 +225,7 @@
         -webkit-background-clip: text;
 	    -webkit-text-fill-color: transparent;
         /* color: magenta; */
-        background-image: linear-gradient(to right, rgba(0, 230, 255, 1) 0%, rgba(57, 69, 255, 1) 21%, rgba(100, 0, 255, 1) 40%, rgba(233, 0, 255, 1) 61%, rgba(255, 134, 0, 1) 86%, rgba(255, 237, 0, 1) 100%);        
+        background-image: linear-gradient(to right, rgba(0, 230, 255, 1) 0%, rgba(57, 69, 255, 1) 25%, rgba(100, 0, 255, 1) 50%, rgba(233, 0, 255, 1) 75%);        
         cursor: pointer;
     }
     /* HIGHLIGHTS */
@@ -475,7 +476,7 @@
         margin: 10% 0;
         width: 200px;
         height: 280px;
-        box-shadow: 0 0 100px orange;
+        box-shadow: 5px 5px 10px orange;
     }
 
     .portrait img {filter: grayscale(1);}
