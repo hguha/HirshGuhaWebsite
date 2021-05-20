@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  </head>
+  <body>
+    <div id="top-bar">
+      <img title="Back To Home" onclick="window.location.href='/'" src="images/hg-white.svg" class="logo"><br>
+        <input placeholder="Filter Projects" id="text-filter" oninput="filterProjects()">
+        <div id="language-filter">
+
+        </div>
+    </div>
+
+    <div id="projects">
+        <div class="listing-title">
+          Showing <span id="num-showing"></span> Projects
+        </div>
+        <div id="toggle" onclick="toggleAll()">Collapse All</div>
+        <div id="project-listing">
+            
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="scripts/projectsData.js"></script> 
+    <script src="scripts/projects.js"></script> 
+  </body>
+  
+  

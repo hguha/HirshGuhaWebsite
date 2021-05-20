@@ -27,6 +27,9 @@ function getSMIcons() {
     $(".sm-icons").html(html);
 }
 
+console.log($("#curYear"));
+$("#curYear")[0].innerHTML = new Date().getFullYear()
+
 function typeWriter() {
     if (i < firstName.length) {
         document.getElementById("first-name").innerHTML += firstName.charAt(i);
@@ -253,12 +256,14 @@ function getProjects() {
     function getProjectDOMS(p) {
         let doms = [];
         for (p of projects) {
-            var card = `<h3>${p.title}</h3><div class="languages">${p.languages.join(" • ").toUpperCase()}</div><div class="description">${p.description}</div><hr style="margin-bottom: 15px"><div class="row"><div class="feature-col">`
+            var card = `<h3>${p.title}</h3><div class="languages">${p.languages.join(" • ").toUpperCase()}</div><hr style="margin: 5px 0"><div class="description">${p.description}</div><hr style="margin: 5px 0 15px 0"><div class="row"><div class="feature-col">`
             for (const f of p.features)
                 card += `<div class="feature"><span class="fa-stack fa-2x"><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-${f.icon} fa-stack-1x"></i></span><span class="text">${f.caption}<span></div>`
             card += `</div><div class="col"><img class="project-image" src="images/${p.image}"></div></div><br>`
+            card += `<div class="button-container">`
             for (const b of p.buttons)
                 card += `<button onclick="window.open('${b.link}','_blank');"><i class="${b.icon}"></i> ${b.tooltip}</button>`
+            card += '</div>'
             doms.push(card);
         }
         return doms;
@@ -282,52 +287,54 @@ function getProjects() {
     }
 
     let isMobile = window.innerWidth < projectResizer;
-    let projectsPerPage = isMobile ? 3 : projects.length;
+    let projectsPerPage = isMobile ? 3 : 6;
     let numPages = isMobile ? (Math.floor(projects.length / projectsPerPage)) : 1;
     let html = "";
     let start = 0;
-    for (let i = 0; i < numPages; i++) {
-        html += `<div class="horizontal-scrolling">`;
-        html += `<p style="font-size:30px; text-align:center">PROJECTS</p><div class="project-grid row">`;
-        for (let j = start; j < projectsPerPage + start; j++) {
-            html += `<div class="projects-col">
-                        <img id="project-image-${j + 1}" src="images/${projects[j].image}">    
-                        <div id="project-overlay-${j + 1}" class="project-overlay">
-                            <div class="overlay-text">${projects[j].title}</div>
-                        </div>
-                    </div>`;
-        }
-        start += projectsPerPage;
-        html += `</div></div>`;
+    html += `<h3 style="text-align:center">FEATURED PROJECTS</h3>`;
+    html += isMobile ? "" : `<p style="color:gray; font-size:18px; text-align:center; padding-bottom: 10px">
+                22 Projects. 20 languages/frameworks. 9 Games. 3 Mobile Apps. 2 Research Projects. And So Much More.
+            </p>`
+    html += `<div class="project-grid row">`;
+    for (let j = start; j < projectsPerPage + start; j++) {
+        html += `<div class="projects-col">
+                    <img id="project-image-${j + 1}" src="images/${projects[j].image}">    
+                    <div id="project-overlay-${j + 1}" class="project-overlay">
+                        <div class="overlay-text">${projects[j].title}</div>
+                    </div>
+                </div>`;
     }
+    start += projectsPerPage;
+    html += `<button onclick="window.location.href='/projects'" style="margin-top: 20px"><i class="fas fa-compass"></i> Explore All My Projects</button>`;
+    html += `</div>`;
     $("#project-section").html(html);
 
     //puzzles.js
-    if (!isMobile) {
-        html = `<div class="horizontal-scrolling">`;
-        html += `<p style="font-size:30px; text-align:center">PUZZLES.JS</p><div class="puzzle-js-grid row">`;
-        for (let i = 0; i < games.length; i++) {
-            html += `<div class="puzzles-js-col">
-                        <img id="puzzles-js-image-${i + 1}" src="images/${games[i].name}.png">
-                        <div id="games-overlay-${i + 1}" class="project-overlay">
-                            <div class="overlay-text">${games[i].name}</div>
-                        </div>
-                    </div>`;
-        }
-        html += `</div></div>`;
-        $("#project-section").append(html);
-    }
+    // if (!isMobile) {
+    //     html = `<div class="horizontal-scrolling">`;
+    //     html += `<p style="font-size:30px; text-align:center">PUZZLES.JS</p><div class="puzzle-js-grid row">`;
+    //     for (let i = 0; i < games.length; i++) {
+    //         html += `<div class="puzzles-js-col">
+    //                     <img id="puzzles-js-image-${i + 1}" src="images/${games[i].name}.png">
+    //                     <div id="games-overlay-${i + 1}" class="project-overlay">
+    //                         <div class="overlay-text">${games[i].name}</div>
+    //                     </div>
+    //                 </div>`;
+    //     }
+    //     html += `</div></div>`;
+    //     $("#project-section").append(html);
+    // }
 
     //create event listeners
     $(".project-overlay").hover(function() { $(this).siblings()[0].classList.toggle("img-hover"); });
     let projectDoms = getProjectDOMS();
-    let gameDoms = getGameDOMS();
+    // let gameDoms = getGameDOMS();
     $(".project-overlay").click(function() {
         var id = $(this).attr('id');
         var i = Number(id.slice(-1)) - 1;
 
         Swal.fire({
-            html: id[0] === "p" ? projectDoms[i] : gameDoms[i],
+            html: projectDoms[i],
             showConfirmButton: false,
             width: window.innerWidth > 500 ? "90%" : "100%",
             showCloseButton: true,
@@ -342,18 +349,30 @@ function getProjects() {
 //RESEARCH
 function getResearch() {
     let isMobile = window.innerWidth < 550;
-    let html = `<h1 style="text-align: center; font-size: 30px">NOTABLE RESEARCH</h1>`,
+    let html = isMobile ? "" : `<h1 style="text-align: center; font-size: 30px">NOTABLE RESEARCH</h1>`,
         previewSize = 200;
+    let i = 0;
+    let numPerPage = 3;
     for (p of papers) {
-        if (isMobile) { html += `<div class="horizontal-scrolling">` }
+
+        if (isMobile || i % numPerPage == 0) { 
+            html += `<div class="horizontal-scrolling">` 
+        }
+        html+= isMobile ? `NOTABLE RESEARCH` : "";
         html += `<div class="card">
             <div class="paper-title">${p.title}</div>
             <div class="paper-abstract">${p.abstract.substr(0,previewSize)}<a class="read-more">... READ MORE</a><span class="more">${p.abstract.substr(previewSize,p.abstract.length)} <a class="read-less">READ LESS</a></span></div>`;
         for (b of p.links) {
             html += `<button target="_blank" onClick="window.open('papers/${b.href}', '_blank')">Read ${b.type}</button>`;
         }
+
         html += `</div>`
-        if (isMobile) { html += `</div>` }
+
+        if (isMobile || i % numPerPage == numPerPage - 1) {
+            html += `</div>` 
+        }
+    
+        i++;
     }
 
     $("#research-section").html(html);

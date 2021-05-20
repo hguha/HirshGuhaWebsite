@@ -24,7 +24,7 @@
     
     a:hover {color: black;}    
     h2 {font-size: 4em;}    
-    h3 {font-size: 2em;}    
+    h3 {font-size: 2.5em;}    
     button {
         padding: 1%;
         font-size: 15px;
@@ -188,6 +188,7 @@
         background: none;
         border: 1px solid white;
         resize: none;
+        font-family: inherit;
     }
     
      ::placeholder {color: lightgray;}    
@@ -235,7 +236,7 @@
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 3px 6px 0 rgba(0, 0, 0, 0.3), 0 5px 3px -3px rgba(0, 0, 0, 0.6);
         border-radius: 10px;
         padding: 2%;
-        margin: 1%;
+        margin: 2% 1%;
     }
 
     
@@ -406,11 +407,13 @@
     
     .feature-col {
         text-align: justify;
-        margin: auto;
+        /* margin: auto; */
+        width: 60%;
     }
     
-    .feature {padding: 1% 0;}    
-    .project-image {margin: auto;}    
+    .project-image {
+        margin: auto;
+    }    
     #project-section img {
         filter: grayscale(100%);
         width: 100%;
@@ -428,13 +431,26 @@
     }
     
     .projects-col, .puzzles-js-col {
-        flex: 33%;
+        flex: 25%;
         position: relative;
+        margin: 2%;
+        border: 1px solid;
+        border-image: linear-gradient(to right, rgba(0, 230, 255, 1) 0%, rgba(57, 69, 255, 1) 21%, rgba(100, 0, 255, 1) 40%, rgba(233, 0, 255, 1) 61%, rgba(255, 134, 0, 1) 86%, rgba(255, 237, 0, 1) 100%) 1;
     }
     
     .feature {
         display: table;
         padding: 10px 0;
+    }
+
+    .button-container {
+        display: flex; 
+        justify-content: space-around;
+        margin: 0 35%;
+    }
+
+    .button-container button {
+        padding: 3%;
     }
     
     .feature, .text {
@@ -446,6 +462,10 @@
         padding-left: 10px;
         display: table-cell;
         vertical-align: middle;
+    }
+
+    .swal2-popup {
+        font-size: 12px !important;
     }
     
     .fa-stack {
@@ -490,4 +510,12 @@
     
     .paper-title {font-size: 20px;}    
     .paper-abstract {padding: 1% 0;}    
-    #research-section button {margin-right: 1%;}
+    #research-section button {
+        margin: 0 1% 0 0;
+    }
+
+    #research-section .fp-tableCell {
+        padding-top: 2%;
+        vertical-align: top;
+
+    }

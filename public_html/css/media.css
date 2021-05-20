@@ -6,12 +6,23 @@
     .portrait-col {
         display: none;
     }
+
+    .button-container {
+        margin: 0 5%;
+    }
+}
+
+@media (max-width: 900px) {
+    .feature-col {
+        width: 100%;
+    }
 }
 
 @media (max-width: 700px) {
     #contact-section input,
     #contact-section textarea {
         width: 90%;
+        padding: 3%;
     }
     .noncode {
         display: none;
@@ -48,6 +59,18 @@
         width: 160px;
         height: 200px;
     }
+
+}
+
+@media (max-width: 550px) {
+    #research-section .fp-tableCell {
+        padding-top: 0;
+        vertical-align: middle;
+    }
+
+    #research-section .card {
+        min-height: 250px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -73,6 +96,15 @@
 
     .toggle-menu {
         display: block;
+    }
+
+    button {
+        padding: 5%;
+    }
+
+    #research-section button {
+        margin-right: 2%;
+        padding: 3%;
     }
 }
 

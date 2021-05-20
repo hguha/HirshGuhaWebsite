@@ -66,12 +66,12 @@ var projects = [{
         ],
         buttons: [
             { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/SudokuSolver" },
-            { icon: "fab fa-book", tooltip: "Read Paper", link: "/papers/bias_paper.pdf" },
+            { icon: "fas fa-book", tooltip: "Read Paper", link: "/papers/bias_paper.pdf" },
         ],
     },
     {
         title: "Blog.JS",
-        languages: ["html", "Javascript", "JQuery"],
+        languages: ["html", "javascript", "jquery"],
         description: "The lightest-weight, easiest, most customizable blogging platform you'll ever see.",
         image: "blog.png",
         features: [
@@ -101,7 +101,7 @@ var projects = [{
     },
     {
         title: "LibMe",
-        languages: ["PHP", "javascript", "SQL"],
+        languages: ["php", "javascript", "SQL"],
         description: "An entirely online library system for handling books",
         image: "libme.png",
         features: [
@@ -116,7 +116,7 @@ var projects = [{
     },
     {
         title: "Expenser",
-        languages: ["Javascript", "Firebase", "Firestore", "Chart.JS"],
+        languages: ["javascript", "firebase", "firestore", "chart.js"],
         description: "A progressive web app for tracking month-to-month expenses and monitoring spending habits",
         image: "expenser.png",
         features: [
@@ -130,7 +130,7 @@ var projects = [{
     },
     {
         title: "Puzzles.js",
-        languages: ["JavaScript", "flask", "Python", "CSS"],
+        languages: ["javascript", "flask", "python", "css"],
         description: "A series of puzzle games featuring A.I. opponents and two player support easy to embed in a website.",
         image: "rubikscube.png",
         features: [
@@ -166,52 +166,17 @@ var projects = [{
         features: [
             { icon: "paw", caption: "Tensor Flow Image Classification assures \"dog\" tag is set before uploading the image" },
             { icon: "tachometer-alt", caption: "Dashboard and friend system allows users to see what other users they follow are posting" },
-            { icon: "image", caption: "Add, Delete, Modify, and caption photos" },
+            { icon: "image", caption: "All the usual options are there: Add, Delete, Modify, and caption photos" },
         ],
         buttons: [
             { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/Dogstagram" },
         ],
     },
-    {
-        title: "Sudoku Solver",
-        languages: ["haskell"],
-        description: "Deterministic non-polynomial time sudoku solver written in haskell",
-        image: "solver.png",
-        features: [
-          {
-            icon: "eye-slash",
-            caption: "unsolved puzzle can be pipelined in via a seperate text file, or inputted directly into the program"
-          },
-          {
-            icon: "list-ol",
-            caption: "Handles non-unique cases by returning the first of many possibilities"
-          },
-          {
-            icon: "fast-forward",
-            caption: "Though the algorithm efficiency is non-polynomial, efficiencies mean it solves in under a second"
-          },
-        ],
-        buttons: [
-          { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/SudokuSolver" },
-        ],
-      },
 ]
-
-var games = [
-    { name: "checkers", description: "The classic game of checkers with a special algorithm to calculate all possible jumps for a given piece" },
-    { name: "chess", description: "The classic game of chess with a special algorithm to calculate all possible jumps for a given piece" },
-    { name: "connect-N", description: "Why play connect-4 with an 8x7 board when you could play connect-10 with a 15x15 board?" },
-    { name: "dotsandboxes", description: "Using a node and graph data structure instead of a grid, try to create more boxes than your friend!", },
-    { name: "minesweeper", description: "The classic game of minesweeper with many additional features - my take on a recursive revealing algorithm", },
-    { name: "rubikscube", description: "my take on a functioning Rubiks Cube model, using CSS shaders controlled with a mouse", },
-    { name: "sudoku", description: "play randomly generated sudoku, create your own, or use the built in backtracking algorithm to have a board solved for you", },
-    { name: "tetris", description: "As a former compeitive tetris player(7th in the world!), I thought it fitting to recreate my favorite game and learn it's matrix arithmetic" },
-    { name: "tictactoe", description: "The classic game of tic-tic-toe for one or two players, featuring an unbeatable AI", },
-];
 
 let papers = [{
         title: "DDoS Detective: A Collaborative Telemetry SystemFor DDoS Identification and Mitigation",
-        abstract: "Distributed Denial-of-Service (DDoS) is a broad class of network attacks that overwhelm a server with a high volume of traffic. Common DDoS attacks such as Memcached DDoS and Syn Flood DDoS rely on IP spoofing to achieve attack amplification. This paper presents a system called \"DDoS Detective\" for cooperation between telemetry systems across ASes to detect and mitigate amplification based DDoS attacks that use IP spoofing. Many recent systems have used techniques from statistics and machine learning to achieve successful attack detection. In contrast, DDoS Detective uses no statistical techniques. Low level operations in the system are formulated and tested using Sonata queries and can be combined across ASes to map an attack. In running these queries on Sonata, we unintentionally discover and present implementation issues with the underlying Sonata code base.",
+        abstract: "Distributed Denial-of-Service (DDoS) is a broad class of network attacks that overwhelm a server with a high volume of traffic. This paper presents a system called \"DDoS Detective\" for cooperation between telemetry systems across ASes to detect and mitigate amplification based DDoS attacks that use IP spoofing. Many recent systems have used techniques from statistics and machine learning to achieve successful attack detection. In contrast, DDoS Detective uses no statistical techniques. Low level operations in the system are formulated and tested using Sonata queries and can be combined across ASes to map an attack. In running these queries on Sonata, we unintentionally discover and present implementation issues with the underlying Sonata code base.",
         links: [{ type: "Proposal", href: "ddos_proposal.pdf" }, { type: "Paper", href: "ddos_paper.pdf" }]
     },
     {
@@ -220,9 +185,24 @@ let papers = [{
         links: [{ type: "Proposal", href: "bias_proposal.pdf" }, { type: "Paper", href: "bias_paper.pdf" }]
     },
     {
+        title: "Face To Face: An Accuracy-Time Weighted Comparison of Facial Recognition Methods",
+        abstract: "Facial recognition has broad applicability in a variety of fields, including user authentication, person identification, video surveillance, criminal investigations, data privacy, gaming, and photography. In this paper, we study three different methods for categorizing faces from a variety of images: Haar Cascade Classifiers, Histogram Oriented Gradients, and Convolutional Neural Networks. Using the FDDB dataset, we will examine how each of these models performs on various image types by generating bounding boxes, time, and accuracy statistics. We then use this to analyze the situations that favor one model over another, and discuss the trade-offs present in various scenarios.",
+        links: [{ type: "Paper", href: "facial_recognition_paper.pdf" }]
+    },
+    {
+        title: "Classifying Twitter Sentiments from the Black Lives Matter Movement",
+        abstract: "We classify tweets related to the Black Lives Matter movement as positive or negative in order to ascertain an understanding of various classifiers. After cleaning the data, we train 5 different classifiers, each using both a bag-of-words representation and a tf-idf score. We use a variety of metrics to evaluate the performance of the classifiers, including accuracy, precision, recall, ROC AUC scores, and cross-validation. We found that the classifiers generally had better performance with tf-idf scores, and that Support Vector Machines, Naive Bayes, and Logistic Regression tended to be the most accurate by a variety of metrics, while Random Forests and K-Nearest Neighbors performed poorly.",
+        links: [{ type: "Paper", href: "twitter_paper.pdf" }]
+    },
+    {
         title: "Predictive Markers of Engineering Graduate Admissions Behaviour",
         abstract: "In the area of Engineering Schools, some would describe the admissions process of Masters and PhD programs as something that would require a crystal ball to get right. Well that most certainly might help, there is evidence that Engineering Departments follow changes that can be predicated, and improved in their admissions decision. Here, we will outline an approach to understanding and enhancing graduate admissions decisions based on predictive markers.",
         links: [{ type: "Proposal", href: "admissions_proposal.pdf" }]
+    },
+    {
+        title: "Password Pattern Analysis and Policy-Based Mask Generation For Behavioral Trends",
+        abstract: "Large scale corporate data-leaks happen almost weekly. Often, the most worrying leaked piece of information are passwords. Subsequently, penetration testing and security analysis companies make up a multi-million dollar industry, and the study of password security and password choosing behaviours continues to be an important topic for study from various and novel perspectives. Here, I will provide a methodology for analysis of these passwords gives us insight into the psychology of how humans choose passwords, as well as what password cracking techniques would be most effective as well as a methodology for policy-based mask generation for improving password cracking methods.",
+        links: [{ type: "Paper", href: "passwords_paper.pdf" }]
     }
 ];
 
