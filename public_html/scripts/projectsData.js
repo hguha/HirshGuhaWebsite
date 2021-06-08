@@ -103,6 +103,55 @@ var projects = [{
     ],
 },
 {
+  title: "Face-To-Face Object Detection Benchmarking",
+  languages: ["python", "scikit", "opencv"],
+  description: "An implementation of Convolutional Neural Networks, Histogram Oriented Gradients, and Haar Cascading Classifiers, as well as a benchmark method for them",
+  image: "object-detection.png ",
+  features: [
+    {
+      icon: "smile",
+      caption: "Implements real-time facial detection(as well as mouth and eyes) through Haar Cascading Classifiers and your webcam"
+    },
+    {
+      icon: "hourglass",
+      caption: "Measures the accuracy, precision, and recall and time differences between Haar, CNN, and HoG"
+    },
+    {
+      icon: "list-ol",
+      caption: "Implemented Prinicipal Component Analysis(PCA) and Support Vector Machines(SVM) to break recongized faces into eigenvectors"
+    },
+  ],
+  buttons: [
+    { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/facial-recognition-analysis" },
+    { icon: "fas fa-book", tooltip: "Read Paper", link: "/papers/facial_recognition_paper.pdf" },
+
+  ],
+},
+{
+  title: "Website",
+  languages: ["html", "javascript", "jquery", "css", "fullpage.js"],
+  description: "A website entirely coded towards me in order to demonstrate my abilities in web design and dynamic websites; the website you are on right now!",
+  image: "website.png ",
+  features: [
+    {
+      icon: "code-branch",
+      caption: "Multiple versions of the website have allowed me to mess with various technologies and frameworks such as FullPage.JS, Slick.JS, etc."
+    },
+    {
+      icon: "mobile",
+      caption: "Bootstrap framework and use of keyframes creates a perfectly responsive site, viewable at any viewport"
+    },
+    {
+      icon: "expand-arrows-alt",
+      caption: "Full-Page layout with horizontal and vertical scrolling controlable via the keyboard, scroll wheel, and ondrag events."
+    },
+  ],
+  buttons: [
+    { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/puzzles.js/tree/master/tictactoe" },
+    { icon: "fas fa-binoculars", tooltip: "Play", link: "games/tictactoe/index.html" },
+  ],
+},
+{
     title: "Dogstagram",
     languages: ["python", "flask", "jquery", "firebase", "javascript", "tensorflow"],
     description: "A social media/image sharing platform with a twist: image classification prevents upload of any image other than dogs",
@@ -402,55 +451,6 @@ var projects = [{
     ],
     buttons: [
       { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/TimeIt" },
-    ],
-  },
-  {
-    title: "Facial Detection",
-    languages: ["python", "scikit", "openCV"],
-    description: "An implementation of Convolutional Neural Networks, Histogram Oriented Gradients, and Haar Cascading Classifiers, as well as a benchmark method for them",
-    image: "object-detection.png ",
-    features: [
-      {
-        icon: "smile",
-        caption: "Implements real-time facial detection(as well as mouth and eyes) through Haar Cascading Classifiers and your webcam"
-      },
-      {
-        icon: "hourglass",
-        caption: "Measures the accuracy, precision, and recall and time differences between Haar, CNN, and HoG"
-      },
-      {
-        icon: "list-ol",
-        caption: "Implemented Prinicipal Component Analysis(PCA) and Support Vector Machines(SVM) to break recongized faces into eigenvectors"
-      },
-    ],
-    buttons: [
-      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/facial-recognition-analysis" },
-      { icon: "fas fa-book", tooltip: "Read Paper", link: "/papers/facial_recognition_paper.pdf" },
-
-    ],
-  },
-  {
-    title: "Website",
-    languages: ["html", "javascript", "jquery", "css", "fullpage.js"],
-    description: "A website entirely coded towards me in order to demonstrate my abilities in web design and dynamic websites; the website you are on right now!",
-    image: "website.png ",
-    features: [
-      {
-        icon: "code-branch",
-        caption: "Multiple versions of the website have allowed me to mess with various technologies and frameworks such as FullPage.JS, Slick.JS, etc."
-      },
-      {
-        icon: "mobile",
-        caption: "Bootstrap framework and use of keyframes creates a perfectly responsive site, viewable at any viewport"
-      },
-      {
-        icon: "expand-arrows-alt",
-        caption: "Full-Page layout with horizontal and vertical scrolling controlable via the keyboard, scroll wheel, and ondrag events."
-      },
-    ],
-    buttons: [
-      { icon: "fab fa-github", tooltip: "View Code", link: "https://github.com/hguha/puzzles.js/tree/master/tictactoe" },
-      { icon: "fas fa-binoculars", tooltip: "Play", link: "games/tictactoe/index.html" },
     ],
   },
   

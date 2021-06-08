@@ -69,7 +69,7 @@ function showProjects(projects) {
         for(p of projects) {
             html+= `<div class="card" onclick="toggleFeatures(this)">`;
             html+= `<h3>${p.title}</h3>`;
-            html+= `<div class="languages">${p.languages.join(" • ").toUpperCase()}</div>`;
+            html+= `<div class="languages">${p.languages.join(" &#8226; ").toUpperCase()}</div>`;
             html+= `<div class="description">${p.description}</div>`;
             html+=`<div class="features" style="display:${collapsed ? "none" : "block"}">`
             html+=`<hr style="margin: 15px 0">`
